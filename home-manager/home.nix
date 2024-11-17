@@ -68,6 +68,7 @@
   programs.neovim = 
 	let
           toLua = str: "lua << EOF\n${str}\nEOF\n";
+          toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n"
         in
         {
           enable = true;
@@ -81,7 +82,7 @@
             plenary-nvim
             {
               plugin = telescope-nvim;
-              config = toLua "require('config.telescope')"; 
+              config = toLua "require('config.telescope').setup()"; 
             }
 
             telescope-fzf-native-nvim
@@ -94,7 +95,7 @@
             cmp-path
             {
               plugin = nvim-cmp;
-              config = toLua "require('config.cmp')";
+              config = toLua "require('config.cmp').setup()";
             }
             nvim-lspconfig
 
