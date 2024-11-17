@@ -75,6 +75,12 @@
 	   
 	   telescope-nvim
 
+           telescope-fzf-native-nvim
+
+           nvim-cmp
+
+           nvim-lspconfig
+
 	   (nvim-treesitter.withPlugins (p: [
 		p.tree-sitter-nix
 		p.tree-sitter-vim
