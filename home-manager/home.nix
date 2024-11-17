@@ -46,6 +46,9 @@
 	# productivity
 	btop # replaces htop/nmon
 
+	# Chats
+	discord
+	
 	# For laptop
 	# https://nixos.wiki/wiki/Laptop 
 
