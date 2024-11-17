@@ -65,7 +65,7 @@
 	# package = pkgs-stable.git;
   };
 
-  programs.neovim = {
+  programs.neovim = 
 	let
           toLua = str: "lua << EOF\n${str}\nEOF\n";
         in
