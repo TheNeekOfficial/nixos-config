@@ -66,30 +66,47 @@
   };
 
   programs.neovim = {
-	enable = true;
-	viAlias = true;
-	vimAlias = true;
-	vimdiffAlias = true;
+	let
+          toLua = str: "lua << EOF\n${str}\nEOF\n";
+        in
+        {
+          enable = true;
+	  viAlias = true;
+	  vimAlias = true;
+	  vimdiffAlias = true;
 
-	plugins = with pkgs.vimPlugins; [
-	   
-	   telescope-nvim
+	  plugins = with pkgs.vimPlugins; [
+	    
+	    telescope-nvim
+            plenary-nvim
+            {
+              plugin = telescope-nvim;
+              config = toLua "require('config.telescope')" 
+            }
 
-           telescope-fzf-native-nvim
+            telescope-fzf-native-nvim
 
-           nvim-cmp
+            nvim-cmp
+            cmp-nvim-lsp
+            cmp-buffer
+            cmp-nvim-lua
+            lspkind-nvim
+            cmp-path
+            {
+              plugin = nvim-cmp;
+              config = toLua "require('config.cmp')"
+            nvim-lspconfig
 
-           nvim-lspconfig
+	    (nvim-treesitter.withPlugins (p: [
+	 	p.tree-sitter-nix
+	 	p.tree-sitter-vim
+	 	p.tree-sitter-bash
+	 	p.tree-sitter-python
+	    ]))
 
-	   (nvim-treesitter.withPlugins (p: [
-		p.tree-sitter-nix
-		p.tree-sitter-vim
-		p.tree-sitter-bash
-		p.tree-sitter-python
-	   ]))
-
-	   vim-nix
-	];
+	    vim-nix
+	 ];
+        };
   };
   # alacritty - a cross-platform, GPU-accelerated terminal emulator
   # programs.alacritty = {
