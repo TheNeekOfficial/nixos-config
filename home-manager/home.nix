@@ -80,10 +80,10 @@
 	    
 	    telescope-nvim
             plenary-nvim
-            {
-              plugin = telescope-nvim;
-              config = toLua "require('config.telescope').setup()"; 
-            }
+            #{
+            #  plugin = telescope-nvim;
+            #  config = toLua "require('config.telescope').setup()"; 
+            #}
 
             telescope-fzf-native-nvim
 
@@ -93,10 +93,10 @@
             cmp-nvim-lua
             lspkind-nvim
             cmp-path
-            {
-              plugin = nvim-cmp;
-              config = toLua "require('config.cmp').setup()";
-            }
+            #{
+            #  plugin = nvim-cmp;
+            #  config = toLua "require('config.cmp').setup()";
+            #}
             nvim-lspconfig
 
 	    (nvim-treesitter.withPlugins (p: [
