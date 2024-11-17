@@ -45,7 +45,7 @@
       modules = [
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
-        ./configuration.nix
+        ./nixos/configuration.nix
 
 	# Make HM as module of nixos so deployments automatic
 	home-manager.nixosModules.home-manager
@@ -53,7 +53,7 @@
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
 
-	  home-manager.users.dylanleslie = import ./home.nix;
+	  home-manager.users.dylanleslie = import ./home-manager/home.nix;
 
 	  # Optionally use home-manager.extraSpecialArgs to pass arguments to home.nix
 	}
