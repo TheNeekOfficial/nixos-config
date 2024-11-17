@@ -73,7 +73,7 @@
 
 	plugins = with pkgs.vimPlugins; [
 	   
-	   telescope-nvim;
+	   telescope-nvim
 
 	   (nvim-treesitter.withPlugins (p: [
 		p.tree-sitter-nix
