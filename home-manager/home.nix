@@ -6,7 +6,7 @@
   }:
 
 {
-  # TODO please change the username & home directory to your own
+  # please change the username & home directory to your own
   home.username = "dylanleslie";
   home.homeDirectory = "/home/dylanleslie";
 
@@ -65,6 +65,26 @@
 	# package = pkgs-stable.git;
   };
 
+  programs.neovim = {
+	enable = true;
+	viAlias = true;
+	vimAlias = true;
+	vimdiffAlias = true;
+
+	plugins = with pkgs.vimPlugins; [
+	   
+	   telescope-nvim;
+
+	   (nvim-treesitter.withPlugins (p: [
+		p.tree-sitter-nix
+		p.tree-sitter-vim
+		p.tree-sitter-bash
+		p.treesitter-python
+	   ]));
+
+	   vim-nix
+	];
+  };
   # alacritty - a cross-platform, GPU-accelerated terminal emulator
   # programs.alacritty = {
   #   enable = true;
