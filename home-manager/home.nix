@@ -79,8 +79,8 @@
 		p.tree-sitter-nix
 		p.tree-sitter-vim
 		p.tree-sitter-bash
-		p.treesitter-python
-	   ]));
+		p.tree-sitter-python
+	   ]))
 
 	   vim-nix
 	];
