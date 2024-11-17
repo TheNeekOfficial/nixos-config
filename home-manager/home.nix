@@ -81,7 +81,7 @@
             plenary-nvim
             {
               plugin = telescope-nvim;
-              config = toLua "require('config.telescope')" 
+              config = toLua "require('config.telescope')"; 
             }
 
             telescope-fzf-native-nvim
@@ -94,7 +94,8 @@
             cmp-path
             {
               plugin = nvim-cmp;
-              config = toLua "require('config.cmp')"
+              config = toLua "require('config.cmp')";
+            }
             nvim-lspconfig
 
 	    (nvim-treesitter.withPlugins (p: [
@@ -107,7 +108,7 @@
 	    vim-nix
 	 ];
         };
-  };
+
   # alacritty - a cross-platform, GPU-accelerated terminal emulator
   # programs.alacritty = {
   #   enable = true;
