@@ -105,6 +105,7 @@
     wget    
 
     # Own Mods
+    home-manager
 
     # Hyprland
     kitty
@@ -162,4 +163,8 @@
 
   # Makes nvim as default editor
   environment.variables.EDITOR = "neovim";
+
+  home-manager.backupFileExtension = "backup";
+
+  programs.git.enable = true;
 }

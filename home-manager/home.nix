@@ -42,12 +42,13 @@
 	which
 	tree
 	eza
+        git
 
 	# productivity
 	btop # replaces htop/nmon
 
 	# Chats
-	discord
+       # discord
 	
 	# For laptop
 	# https://nixos.wiki/wiki/Laptop 
