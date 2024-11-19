@@ -53,7 +53,7 @@
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
 
-	  home-manager.users.dylanleslie = import ./home-manager/home.nix;
+	  home-manager.users.neek = import ./home-manager/home.nix;
 
 	  # Optionally use home-manager.extraSpecialArgs to pass arguments to home.nix
 	}
