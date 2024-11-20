@@ -164,7 +164,13 @@
   # Makes nvim as default editor
   environment.variables.EDITOR = "neovim";
 
-  home-manager.backupFileExtension = "backup";
-
-  programs.git.enable = true;
+  # Installs bspwm
+  # Doesn't work
+  # programs.bspwm.enable = true;
+  # programs.sxhkd.enable = true;
+  # programs.polybar.enable = true;
+  # programs.picom.enable = true;
+  # programs.dmenu.enable = true;
+  # programs.dunst.enable = true;
+  # programs.nitrogen.enable = true;
 }
