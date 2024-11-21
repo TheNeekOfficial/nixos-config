@@ -49,7 +49,8 @@
 
 	# Chats
         discord
-	
+        betterdiscordctl	
+
 	# For laptop
 	# https://nixos.wiki/wiki/Laptop 
 
@@ -111,10 +112,6 @@
 	 ];
         };
 
-  programs.discord = {
-    enable = true;
-
-  };
   # alacritty - a cross-platform, GPU-accelerated terminal emulator
   # programs.alacritty = {
   #   enable = true;
