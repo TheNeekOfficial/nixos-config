@@ -43,13 +43,12 @@
 	tree
 	eza
         git
-
-	# productivity
+        
+        # productivity
 	btop # replaces htop/nmon
 
 	# Chats
         discord
-        betterdiscordctl	
 
 	# For laptop
 	# https://nixos.wiki/wiki/Laptop 
@@ -57,6 +56,11 @@
 	# For stable versions
 	# pkgs-stable.a etc.
   ];
+  
+  #home.file.".config/discord" = {
+  #  source = ./discord;
+  #  recursive = true;
+  #};
 
   programs.git = {
   	enable = true;
