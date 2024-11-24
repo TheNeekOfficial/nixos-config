@@ -107,9 +107,6 @@
     # Own Mods
     home-manager
 
-    # Hyprland
-    kitty
-
     # Git/Development
     git
     gh
@@ -145,9 +142,6 @@
 
   # Own Mods
 
-  # Install Hyprland
-  programs.hyprland.enable = true; 
-  
   # Limits Generations kept
   boot.loader.systemd-boot.configurationLimit = 10;
 

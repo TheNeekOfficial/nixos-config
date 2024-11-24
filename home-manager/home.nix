@@ -46,12 +46,17 @@
 	tree
 	eza
         git
+        bat
         
         # productivity
 	btop # replaces htop/nmon
 
 	# Chats
         discord
+
+        # WM
+        # Hyprland
+        kitty
 
 	# For laptop
 	# https://nixos.wiki/wiki/Laptop 
@@ -119,7 +124,7 @@
 	 ];
         };
 
-  # alacritty - a cross-platform, GPU-accelerated terminal emulator
+ # alacritty - a cross-platform, GPU-accelerated terminal emulator
   # programs.alacritty = {
   #   enable = true;
   #   # custom settings
