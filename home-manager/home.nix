@@ -50,6 +50,7 @@
         
         # productivity
 	btop # replaces htop/nmon
+        qownnotes
 
 	# Chats
         discord
