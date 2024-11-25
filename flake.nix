@@ -17,6 +17,11 @@
 	# to avoid problem caused by different version of nixpkgs
 	inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # ToDo list terminal
+    # TODO get working
+    #dooit.url = "github:dooit-org/dooit";
+    #dooit-extras.url = "github:dooit-org/dooit-extras";
   };
 
  outputs = inputs@{ 
@@ -27,7 +32,7 @@
     ... 
  }: {
     nixosConfigurations = {
-    nixos = nixpkgs.lib.nixosSystem rec {
+    lapnix = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs = { 
         inherit inputs; 
@@ -57,8 +62,22 @@
 
 	  # Optionally use home-manager.extraSpecialArgs to pass arguments to home.nix
 	}
-      ];
-      };
-    };
-  };
+       ];
+     };
+   };
+   #let
+   #  pkgs = import nixpkgs {};
+   #  system = "x86_64-linux";
+   #in {
+   #  homeConfigurations."${username}" = nixpkgs.lib.nixosSystem {
+   #    pkgs = pkgs;
+   #    extraSpecialArgs = {
+   #      inherit system inputs;
+   #    };
+
+   #    modules = [
+   #      ./home-manager/modules/dooit.nix
+   #    ];
+   # };
+ };
 }
