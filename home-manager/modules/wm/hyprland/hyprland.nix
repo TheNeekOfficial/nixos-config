@@ -12,7 +12,7 @@
           [
             "$mod, W, exec, firefox"
             "$mod, ENTER, exec, kitty"
-            "$mod SHIFT, ENTER exec, alacritty"
+            #"$mod SHIFT, ENTER exec, alacritty"
           ]
           ++ (
             # workspaces
