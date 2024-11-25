@@ -58,6 +58,7 @@
         # WM
         # Hyprland
         kitty
+        alacritty
 
 	# For laptop
 	# https://nixos.wiki/wiki/Laptop 
