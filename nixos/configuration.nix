@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, pkgs-stable, inputs, ... }:
 
 {
   imports =
@@ -109,9 +109,12 @@
 
     # Git/Development
     git
-    gh
+    pkgs-stable.gh
     devenv
   ];
+
+  # Hyprland
+  programs.hyprland.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
