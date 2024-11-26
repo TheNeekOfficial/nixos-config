@@ -18,6 +18,9 @@
 	inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Hyprland
+    hyprland.url = "github:hyprwm/Hyprland";
+
     # ToDo list terminal
     # TODO get working
     #dooit.url = "github:dooit-org/dooit";
@@ -29,8 +32,23 @@
     nixpkgs, 
     home-manager, 
     nixpkgs-stable, 
+    hyprland,
     ... 
- }: {
+  }: {
+    # TODO get working based off flake install on wiki
+    #homeConfigurations."dylan@lapnix" = home-manager.lib.homeManagerConfiguration {
+    #  pkgs = nixpkgs.legacyPackages.x86_64-linux;
+
+    #  modules = [
+    #    {
+    #      wayland.windowManager.hyprland = {
+    #        enable = true;
+    #        package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    #      };
+    #    }
+    #  ];
+    #};
+   
     nixosConfigurations = {
     lapnix = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
