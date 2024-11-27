@@ -1,5 +1,9 @@
 { pkgs, config, ...}:
 {
+  imports = [
+    ./kitty.nix
+  ];
+
   # WM
 
   # Hyprland
