@@ -37,14 +37,12 @@
   }: {
     # TODO get working based off flake install on wiki
     homeConfigurations."dylan@lapnix" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-
       modules = [
         {
           wayland.windowManager.hyprland = {
             enable = true;
             package = inputs.hyprland.packages.${nixpkgs.legacyPackages.x86_64-linux.stdenv.hostPlatform.system}.hyprland;
-          };
+         };
         }
       ];
     };
