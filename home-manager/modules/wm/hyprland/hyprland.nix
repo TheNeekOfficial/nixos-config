@@ -1,11 +1,6 @@
 { pkgs, config, ...}:
 {
-  imports = [
-    ./kitty.nix
-  ];
-
   # WM
-
   # Hyprland
   
   wayland.windowManager.hyprland = {
@@ -17,7 +12,7 @@
           [
             "$mod, W, exec, firefox"
             #"$mod, ENTER, exec, kitty"
-            "$mod, ENTER exec, alacritty"
+            "$mod, ENTER, exec, alacritty"
           ]
           ++ (
             # workspaces

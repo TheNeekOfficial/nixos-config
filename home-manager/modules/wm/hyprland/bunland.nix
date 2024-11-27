@@ -1,6 +1,6 @@
 {
   imports = [
+    ./kitty.nix
     ./hyprland.nix
-    #./kitty.nix
   ];
 }
