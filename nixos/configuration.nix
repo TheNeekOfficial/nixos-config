@@ -159,7 +159,7 @@
   environment.variables.EDITOR = "neovim";
 
   # Hyprland
-  #programs.hyprland.enable = true;
+  programs.hyprland.enable = true;
 
   # Installs bspwm
   # Doesn't work

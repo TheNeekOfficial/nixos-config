@@ -36,18 +36,18 @@
     ... 
   }: {
     # TODO get working based off flake install on wiki
-    #homeConfigurations."dylan@lapnix" = home-manager.lib.homeManagerConfiguration {
-    #  pkgs = nixpkgs.legacyPackages.x86_64-linux;
+    homeConfigurations."dylan@lapnix" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-    #  modules = [
-    #    {
-    #      wayland.windowManager.hyprland = {
-    #        enable = true;
-    #        package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    #      };
-    #    }
-    #  ];
-    #};
+      modules = [
+        {
+          wayland.windowManager.hyprland = {
+            enable = true;
+            package = inputs.hyprland.packages.${nixpkgs.legacyPackages.x86_64-linux.stdenv.hostPlatform.system}.hyprland;
+          };
+        }
+      ];
+    };
    
     nixosConfigurations = {
     lapnix = nixpkgs.lib.nixosSystem rec {
@@ -71,14 +71,14 @@
         ./nixos/configuration.nix
 
 	# Make HM as module of nixos so deployments automatic
-	home-manager.nixosModules.home-manager
+        home-manager.nixosModules.home-manager
 	{
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
 
 	  home-manager.users.dylan = import ./home-manager/home.nix;
 
-	  # Optionally use home-manager.extraSpecialArgs to pass arguments to home.nix
+	#  # Optionally use home-manager.extraSpecialArgs to pass arguments to home.nix
 	}
        ];
      };
