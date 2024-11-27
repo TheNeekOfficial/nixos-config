@@ -12,8 +12,8 @@
         bind =
           [
             "$mod, W, exec, firefox"
-            "$mod, ENTER, exec, kitty"
-            #"$mod SHIFT, ENTER exec, alacritty"
+            #"$mod, ENTER, exec, kitty"
+            "$mod, ENTER exec, alacritty"
           ]
           ++ (
             # workspaces
