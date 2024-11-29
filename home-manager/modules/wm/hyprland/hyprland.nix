@@ -1,11 +1,17 @@
 { pkgs, config, ...}:
 {
+  # Taken off the internet to try and make work
+  home.packages = with pkgs; [
+    xwayland
+  ];
+
   # WM
   # Hyprland
   
   wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
+
       settings = {
         "$mod" = "SUPER";
         bind =
@@ -15,29 +21,20 @@
             "$mod, Return, exec, alacritty"
             "$mod, q, killactive,"
           ]
-          ++ (
-            # workspaces
-            # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
-            builtins.concatLists (builtins.genList (i:
+
+          # workspaces: binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
+          ++ builtins.concatLists (builtins.genList (i:
               let ws = i + 1;
               in [
                 "$mod, code:1${toString i}, workspace, ${toString ws}"
                 "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
               ]
-            )
-          9)
-        );
+            ) 9);
       };
   };
 
   # hints Electron apps to use Wayland
   home.sessionVariables.NIXOS_OZONE_WL = "1";
-
-  # Taken off the internet to try and make work
-  home.packages = with pkgs; [
-    xwayland
-  ];
-
 
   # designed for config.nix
   #hardware = {
