@@ -12,7 +12,8 @@
           [
             "$mod, W, exec, firefox"
             #"$mod, ENTER, exec, kitty"
-            "$mod, ENTER, exec, alacritty"
+            "$mod, Return, exec, alacritty"
+            "$mod, q, killactive,"
           ]
           ++ (
             # workspaces
@@ -31,4 +32,25 @@
 
   # hints Electron apps to use Wayland
   home.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  # Taken off the internet to try and make work
+  home.packages = with pkgs; [
+    xwayland
+  ];
+
+
+  # designed for config.nix
+  #hardware = {
+  #  opengl.enable = true;
+  #  nvidia.modesetting.enable = true;
+  #};
+
+  #services.xserver = {
+  #  enable = true;
+  #  videosDrivers = ["nvidia"];
+  #  displayManager.gdm = {
+  #    enable = true;
+  #    wayland = true;
+  #  };
+  #};
 }
