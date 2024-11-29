@@ -2,6 +2,6 @@
   imports = [
     #./bspwm/bunspwm.nix
     #./hyprland/bunland.nix
-    ./i3/bun-i3.nix
+    ./i3/bund-i3.nix
   ];
 }
