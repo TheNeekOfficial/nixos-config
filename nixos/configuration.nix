@@ -84,7 +84,7 @@
   users.users.dylan = {
     isNormalUser = true;
     description = "Dylan";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "input" "audio" ];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird

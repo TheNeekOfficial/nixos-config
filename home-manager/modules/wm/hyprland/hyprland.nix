@@ -2,7 +2,11 @@
 {
   # Taken off the internet to try and make work
   home.packages = with pkgs; [
+    hyprland
+    wayland
     xwayland
+    mesa
+    wlroots
   ];
 
   # WM
@@ -28,8 +32,12 @@
               in [
                 "$mod, code:1${toString i}, workspace, ${toString ws}"
                 "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-              ]
-            ) 9);
+                ]
+              ) 
+          9);
+        
+        # TODO change on laptop
+        #monitor = "Virtual-1,1920x1080@59.96";
       };
   };
 
