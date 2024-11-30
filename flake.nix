@@ -1,3 +1,4 @@
+
 {
  description = "A basic NixOS flake";
 
@@ -80,7 +81,27 @@
 	}
        ];
      };
-   };
+  old-lapnix = nixpkgs.lib.nixosSystem rec {
+	system = "x86_64-linux";
+	specialArgs = {
+	  inherit inputs;
+	  pkgs-stable = import nixpkgs-stable {
+		inherit system;
+		config.allowUnfree = true;
+		};
+	  };
+	modules = [
+		./hosts/old-asus/nixos/configuration.nix
+		home-manager.nixosModules.home-manager
+		{
+			home-manager.useGlobalPkgs = true;
+			home-manager.useUserPackages = true;
+			home-manager.users.dylan = import ./home-manager/home.nix;
+		}
+	];
+     };	
+   
+   
    #let
    #  pkgs = import nixpkgs {};
    #  system = "x86_64-linux";
@@ -96,4 +117,5 @@
    #    ];
    # };
  };
+};
 }
