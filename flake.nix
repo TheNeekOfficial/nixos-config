@@ -7,7 +7,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # NixOS Official source, setting stable version 24.05 as backup for package rollback
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     # Home Manager used for managing User configs
     home-manager = {
@@ -91,13 +91,22 @@
 		};
 	  };
 	modules = [
-		./hosts/old-asus/nixos/configuration.nix
-		home-manager.nixosModules.home-manager
-		{
-			home-manager.useGlobalPkgs = true;
-			home-manager.useUserPackages = true;
-			home-manager.users.dylan = import ./home-manager/home.nix;
-		}
+
+          # Imports old config
+          ./hosts/old-asus/nixos/configuration.nix
+
+          # Imports home-manager
+          home-manager.nixosModules.home-manager
+	    {
+	      home-manager.useGlobalPkgs = true;
+	      home-manager.useUserPackages = true;
+              home-manager.users.dylan = {
+                imports = [
+                  ./home-manager/home.nix
+                  ./home-manager/modules/wm/hyprland/bunland.nix
+                ];
+              };
+	    }
 	];
      };	
    
