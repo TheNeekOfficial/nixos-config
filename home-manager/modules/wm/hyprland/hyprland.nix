@@ -2,13 +2,19 @@
 {
   # Taken off the internet to try and make work
   home.packages = with pkgs; [
+    # Base hyprland
     hyprland
     wayland
     xwayland
     mesa
     wlroots
-    rofi
+
+    #Network
     networkmanagerapplet
+    #gnome-keyring
+
+    #Apps
+    rofi
     #waybar
   ];
 
@@ -36,7 +42,7 @@
             "$mod, W, exec, firefox"
             "$mod, Return, exec, kitty"
             "$mod SHIFT, Return, exec, alacritty"
-            "$mod, SPACE, exec, rofi --mode run"
+            "$mod, SPACE, exec, rofi -show run"
             "$mod, E, exec, dolphin"
             "$mod ALT, E, exec, system-settings"
 
