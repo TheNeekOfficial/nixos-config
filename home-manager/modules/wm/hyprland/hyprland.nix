@@ -15,7 +15,8 @@
 
     #Apps
     rofi
-    #waybar
+    waybar
+    hyprpaper
   ];
 
   # WM
@@ -32,7 +33,8 @@
         # Exec on startup
         exec-once = [
           "nm-applet --indicator & disown"
-          #"waybar"
+          "waybar"
+          "hyprpaper"
         ];
 
         # Sets keybindings for things
@@ -44,7 +46,7 @@
             "$mod SHIFT, Return, exec, alacritty"
             "$mod, SPACE, exec, rofi -show run"
             "$mod, E, exec, dolphin"
-            "$mod ALT, E, exec, system-settings"
+            "$mod ALT, E, exec, systemsettings"
 
             # Window control
             "$mod, q, killactive,"
