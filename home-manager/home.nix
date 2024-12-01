@@ -7,7 +7,7 @@
 
 {
   imports = [
-    ./modules/bundle.nix
+    #./modules/bundle.nix
   ];
   # please change the username & home directory to your own
   home.username = "dylan";
@@ -54,6 +54,9 @@
 
 	# Chats
         discord
+
+        # KDE
+        kdePackages.kdeconnect-kde
 
 	# For laptop
 	# https://nixos.wiki/wiki/Laptop 
