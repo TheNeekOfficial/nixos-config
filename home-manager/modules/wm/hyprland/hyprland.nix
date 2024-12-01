@@ -8,7 +8,8 @@
     mesa
     wlroots
     rofi
-    nm-applet
+    networkmanagerapplet
+    #waybar
   ];
 
   # WM
@@ -25,6 +26,7 @@
         # Exec on startup
         exec-once = [
           "nm-applet --indicator & disown"
+          #"waybar"
         ];
 
         # Sets keybindings for things
