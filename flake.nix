@@ -49,7 +49,7 @@
     };
    
     nixosConfigurations = {
-    lapnix = nixpkgs.lib.nixosSystem rec {
+    vm-3d = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs = { 
         inherit inputs; 
@@ -67,7 +67,7 @@
       modules = [
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
-        ./nixos/configuration.nix
+        ./hosts/vm-3d-accel/nixos/configuration.nix
 
 	# Make HM as module of nixos so deployments automatic
         home-manager.nixosModules.home-manager
@@ -75,7 +75,12 @@
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
 
-	  home-manager.users.dylan = import ./home-manager/home.nix;
+          home-manager.users.dylan = {
+            imports = [
+              ./home-manager/home.nix 
+              ./home-manager/modules/wm/i3/bund-i3.nix
+            ];
+          };
 
 	#  # Optionally use home-manager.extraSpecialArgs to pass arguments to home.nix
 	}
