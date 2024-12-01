@@ -44,6 +44,18 @@
             "$mod, q, killactive,"
             "$mod, F, fullscreen"
             "$mod SHIFT, F, togglefloating,"
+
+            # Moving focus w/ vim keys
+            "$mod, h, movefocus, l"
+            "$mod, l, movefocus, r"
+            "$mod, k, movefocus, u"
+            "$mod, j, movefocus, d"
+
+            # Moving windows w/ vim keys
+            "$mod SHIFT, h, swapwindow, l"
+            "$mod SHIFT, l, swapwindow, r"
+            "$mod SHIFT, k, swapwindow, u"
+            "$mod SHIFT, j, swapwindow, d"
           ]
 
           # workspaces: binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
