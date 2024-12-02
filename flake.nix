@@ -117,11 +117,7 @@
                 imports = [
                   ./home-manager/home.nix
                   ./home-manager/modules/wm/hyprland/bunland.nix
-
-                  # Sources wallpapers to ~/.wallpapers
-                  {
-                    home.file.".wallpapers".source = wallpapers-wrapper.wallpapers.path;
-                  }
+                  ./home-manager/modules/wallpapers.nix
                 ];
               };
 	    }
