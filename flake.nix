@@ -23,9 +23,8 @@
     hyprland.url = "github:hyprwm/Hyprland";
 
     # Wallpapers git setup
-    wallpapers = {
-      url = "github:TheNeekOfficial/wallpapers";
-      flake = false;
+    wallpapers-wrapper = {
+      url = "path:./wallpaper-wrapper";
     };
 
     # ToDo list terminal
@@ -40,10 +39,11 @@
     home-manager, 
     nixpkgs-stable, 
     hyprland,
+    wallpapers-wrapper,
     ... 
   }: {
     # TODO get working based off flake install on wiki
-    homeConfigurations."dylan@lapnix" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."dylan@old-lapnix" = home-manager.lib.homeManagerConfiguration {
       modules = [
         {
           wayland.windowManager.hyprland = {
@@ -97,10 +97,10 @@
 	specialArgs = {
 	  inherit inputs;
 	  pkgs-stable = import nixpkgs-stable {
-		inherit system;
-		config.allowUnfree = true;
-		};
+	    inherit system;
+	    config.allowUnfree = true;
 	  };
+	};
 	modules = [
 
           # Imports old config
@@ -112,10 +112,16 @@
 	    {
 	      home-manager.useGlobalPkgs = true;
 	      home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs;};
               home-manager.users.dylan = {
                 imports = [
                   ./home-manager/home.nix
                   ./home-manager/modules/wm/hyprland/bunland.nix
+
+                  # Sources wallpapers to ~/.wallpapers
+                  {
+                    home.file.".wallpapers".source = wallpapers-wrapper.wallpapers.path;
+                  }
                 ];
               };
 	    }

@@ -1,20 +1,26 @@
-{ config, self, wallpapers, ... }:
+{ config, wallpapers, ... }:
 
+let 
+  wallpaper = ~/.wallpapers/nixos-wallpaper-catppucin-mocha.png;
+in
 {
-  services.hyprpaper.enable = true; 
-  services.hyprpaper.settings = {
-    ipc = "on";
-    splash = false;
-    splash_offset = 2.0;
+  services.hyprpaper = {
+    enable = true; 
 
-    # Loads the wallpapers
-    preload = [ 
-      "wallpapers.nixos-wallpaper-catppuccin-moca.png"
-    ];
+    settings = {
+      ipc = "on";
+      splash = false;
+      splash_offset = 2.0;
 
-    # Sets the wallpapers
-    wallpaper = [
-      " , wallpapers.nixos-wallpaper-catppuccin-mocha.png"
-    ];
+        # Loads the wallpapers
+      preload = [ 
+        "${wallpaper}"
+      ];
+
+        # Sets the wallpapers
+      wallpaper = [
+        , ${wallpaper}"
+      ];
+    };
   };
 }
