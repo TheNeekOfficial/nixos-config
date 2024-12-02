@@ -1,7 +1,7 @@
 { config, wallpapers, ... }:
 
 let 
-  wallpaper = ~/.wallpapers/nixos-wallpaper-catppucin-mocha.png;
+  wallpaper = wallpapers.wallpapers.path.Horimiya.jpeg;
 in
 {
   services.hyprpaper = {
@@ -19,7 +19,7 @@ in
 
         # Sets the wallpapers
       wallpaper = [
-        , ${wallpaper}"
+        ", ${wallpaper}"
       ];
     };
   };
