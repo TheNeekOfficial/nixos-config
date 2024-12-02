@@ -1,7 +1,7 @@
 { config, wallpapers, ... }:
 
 let 
-  wallpaper = wallpapers.wallpapers.path.Horimiya.jpeg;
+  wallpaper = "${wallpapers.wallpapers.path}/nixos-wallpaper-catppuccin-mocha.png";
 in
 {
   services.hyprpaper = {
@@ -14,7 +14,7 @@ in
 
         # Loads the wallpapers
       preload = [ 
-        "${wallpaper}"
+        wallpaper
       ];
 
         # Sets the wallpapers
