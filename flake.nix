@@ -22,6 +22,12 @@
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
 
+    # Wallpapers git setup
+    wallpapers = {
+      url = "github:TheNeekOfficial/wallpapers";
+      flake = false;
+    };
+
     # ToDo list terminal
     # TODO get working
     #dooit.url = "github:dooit-org/dooit";
