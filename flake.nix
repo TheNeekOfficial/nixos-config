@@ -103,7 +103,7 @@
 
           # Imports old config
           ./hosts/old-asus/nixos/configuration.nix
-          ./nixos/modules/kdeconnectfirewall.nix
+          ./nixos/modules/bundle.nix
 
           # Imports home-manager
           home-manager.nixosModules.home-manager
