@@ -2,7 +2,11 @@
 { config, self, ...}:
 
 {
-  networking.firewall = {
+  # Enables kdeconnect
+  programs.kdeconnect.enable = true;
+
+  # Unblocks it from firewall
+  networking.firewall = rec {
     enable = true;
 
     # KDE Connect ports
@@ -10,9 +14,7 @@
       { from = 1714; to = 1764; }
     ];
 
-    allowedUDPPortRanges = [ 
-      { from = 1714; to = 1764; }
-    ];
+    allowedUDPPortRanges = allowedTCPPortRanges; 
   };
 }
 

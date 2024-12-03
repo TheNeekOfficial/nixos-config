@@ -25,6 +25,9 @@
     # Wallpapers git setup
     wallpapers.url = "github:TheNeekOfficial/wallpapers"; 
 
+    # Stylix for easy app customisation
+    stylix.url = "github:danth/stylix";
+
     # ToDo list terminal
     # TODO get working
     #dooit.url = "github:dooit-org/dooit";
@@ -103,7 +106,12 @@
 
           # Imports old config
           ./hosts/old-asus/nixos/configuration.nix
+
+          # Imports nixos modules ie. kdeconnect firewall override
           ./nixos/modules/bundle.nix
+
+          # Imports stylix
+          inputs.stylix.nixosModules.stylix
 
           # Imports home-manager
           home-manager.nixosModules.home-manager
@@ -111,13 +119,12 @@
 	      home-manager.useGlobalPkgs = true;
 	      home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs wallpapers;};
+              home-manager.backupFileExtension = "backup";
               home-manager.users.dylan = {
                 imports = [
                   ./home-manager/home.nix
                   ./home-manager/modules/wm/hyprland/bunland.nix
                 ];
-
-                home.file.".wallpapers".source = wallpapers.wallpapers.path;
               };
 	    }
 	];
