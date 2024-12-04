@@ -103,18 +103,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   nix.settings.experimental-features = [ "nix-command" "flakes"];
-  environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget    
-
-    # Own Mods
-    home-manager
-
-    # Git/Development
-    git
-    pkgs-stable.gh
-    devenv
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -147,5 +135,4 @@
 
   # Hyprland
   programs.hyprland.enable = true;
-
 }

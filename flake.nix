@@ -76,6 +76,9 @@
         # so the old configuration file still takes effect
         ./hosts/vm-3d-accel/nixos/configuration.nix
 
+        # Imports all modules as base
+        ./nixos/modules/bundle.nix
+
 	# Make HM as module of nixos so deployments automatic
         home-manager.nixosModules.home-manager
 	{

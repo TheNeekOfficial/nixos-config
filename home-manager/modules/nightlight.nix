@@ -38,7 +38,7 @@
 
       brightness = {
         day = "1";
-        night = "0.7";
+        night = "0.5";
       };
 
       gamma = {
