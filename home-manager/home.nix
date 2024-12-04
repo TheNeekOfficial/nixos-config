@@ -7,7 +7,7 @@
 
 {
   imports = [
-    #./modules/bundle.nix
+    ./modules/nightlight.nix
   ];
   # please change the username & home directory to your own
   home.username = "dylan";
