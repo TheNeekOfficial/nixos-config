@@ -26,7 +26,7 @@
 
     # Sets the times to changes things over
     dawnTime = "6:00-7:15";
-    duskTime = "18:00-19:30";
+    duskTime = "20:00-22:00";
 
     settings = {
 

@@ -31,7 +31,7 @@
         modules-center = ["hyprland/workspaces" "clock"];
 
         # Same but right
-        modules-right = ["wireplumber" "battery" "cpu" "memory" "user"];
+        modules-right = ["tray" "wireplumber" "battery" "cpu" "memory" "user"];
 
         # Sets settings for "user" module
         "user" = {
