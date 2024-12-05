@@ -14,7 +14,7 @@
     #gnome-keyring
 
     #Apps
-    rofi
+    wofi
     waybar
     hyprpaper
   ];
@@ -44,7 +44,7 @@
             "$mod, W, exec, firefox"
             "$mod, Return, exec, kitty"
             "$mod SHIFT, Return, exec, alacritty"
-            "$mod, SPACE, exec, rofi -show run"
+            "$mod, SPACE, exec, wofi -d"
             "$mod, E, exec, dolphin"
             "$mod ALT, E, exec, systemsettings"
 
