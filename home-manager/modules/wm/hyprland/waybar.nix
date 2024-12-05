@@ -37,7 +37,7 @@
         "user" = {
 
           # Sets format for what to display in waybar
-          "format" = "{user} ({work_M}) Min ↑";
+          "format" = "{user} {work_H}:{work_M} ↑";
 
           # Sets refresh time of it in seconds
           "interval" = 60;
@@ -69,7 +69,7 @@
 
         # Sets battery disp settings
         "battery" = {
-          format = "{capacity}% {icon} Bat";
+          format = "{capacity}% 🔋";
         };
 
         # Sets WirePlumber disp settings
