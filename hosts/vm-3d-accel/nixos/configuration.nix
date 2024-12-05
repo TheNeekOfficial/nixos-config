@@ -130,19 +130,6 @@
 
   # Own Mods
 
-  # Limits Generations kept
-  boot.loader.systemd-boot.configurationLimit = 10;
-
-  # Auto Garbage Collection
-  nix.gc = {
-	automatic = true;
-	dates = "weekly";
-	options = "--delete-older-than 7d";
-  };
-
-  # Optimise storage
-  nix.settings.auto-optimise-store = true;
-
   # Makes nvim as default editor
   environment.variables.EDITOR = "neovim";
 
