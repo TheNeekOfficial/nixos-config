@@ -31,7 +31,7 @@
   home.packages = with pkgs; [
   	
 	# terminal screens
-	neofetch
+	fastfetch
 	cowsay
 	cmatrix
 	cbonsai

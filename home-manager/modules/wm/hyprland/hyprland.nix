@@ -26,6 +26,9 @@
       enable = true;
       xwayland.enable = true;
 
+      # Sets package to the hyprland git
+      #package = inputs.hyprland.packages.${nixpkgs.legacyPackages.x86_64-linux.stdenv.hostPlatform.system}.hyprland;
+
       settings = {
         # Allows windows key to be used
         "$mod" = "SUPER";
