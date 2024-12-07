@@ -6,5 +6,6 @@
     ./nh.nix
     ./stylix.nix
     ./packages.nix
+    ./nerdfont.nix
   ];
 }

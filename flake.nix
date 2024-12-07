@@ -20,7 +20,10 @@
     };
 
     # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Wallpapers git setup
     wallpapers.url = "github:TheNeekOfficial/wallpapers"; 
