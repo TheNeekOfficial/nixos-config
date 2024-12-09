@@ -1,7 +1,7 @@
 {
   imports = [
     ./kitty.nix
-    ./waybar.nix
+    ./waybar/waybundle.nix
     ./hyprpaper.nix
     ./hyprland.nix
   ];
