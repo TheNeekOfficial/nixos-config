@@ -9,6 +9,7 @@
       window#waybar {
 	background: #292b2e;
 	color: #fdf6e3;
+        opacity: 0.75;
       }
 
       #custom-right-arrow-dark,
@@ -30,6 +31,7 @@
       #battery,
       #disk,
       #tray {
+        opacity: 1;
 	background: #1a1a1a;
       }
 
@@ -73,6 +75,7 @@
       #battery,
       #disk {
 	padding: 0 10px;
+        opacity: 1;
       }
   '';
 }
