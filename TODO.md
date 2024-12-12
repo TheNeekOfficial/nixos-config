@@ -1,0 +1,10 @@
+- [ ] 1. Firefox
+	- [ ] 1-1. ChromeCSS
+	- [ ] 1-2. Extensions
+	- [ ] 1-3. Search Engines
+	- [ ] 1-4. Other Stuff
+- [ ] 2. Hyprlock & Hypridle
+	- [ ] 2-1. Look into more
+- [ ] 3.  Neovim
+	- [ ] 3-1. Get plugins working properly
+- [ ] 4. Bigger stuff refer to issues page
