@@ -37,7 +37,8 @@
         exec-once = [
           "nm-applet --indicator & disown"
           "gammastep-indicator"
-          "waybar"
+          "sleep 1 && waybar"
+          "wofi"
           "hyprpaper"
         ];
 
