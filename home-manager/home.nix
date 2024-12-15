@@ -53,7 +53,7 @@
         qownnotes
 
 	# Chats
-        discord
+        vesktop
 
         # KDE
         kdePackages.kdeconnect-kde
@@ -90,7 +90,7 @@
 	  vimAlias = true;
 	  vimdiffAlias = true;
 
-          #plugins = with pkgs.vimPlugins; [
+          plugins = with pkgs.vimPlugins; [
 	  #  
 	  #  telescope-nvim
           #  plenary-nvim
@@ -113,15 +113,15 @@
           #  #}
           #  nvim-lspconfig
 
-	  #  (nvim-treesitter.withPlugins (p: [
-	  #      p.tree-sitter-nix
-	  #      p.tree-sitter-vim
-	  #      p.tree-sitter-bash
-	  #      p.tree-sitter-python
-	  #  ]))
+	    (nvim-treesitter.withPlugins (p: [
+	        p.tree-sitter-nix
+	        p.tree-sitter-vim
+	        p.tree-sitter-bash
+	        p.tree-sitter-python
+	    ]))
 
-	  #  vim-nix
-         #];
+	    vim-nix
+         ];
         };
 
  # alacritty - a cross-platform, GPU-accelerated terminal emulator

@@ -14,6 +14,8 @@
     blueman
 
     #gnome-keyring
+    # Notifications
+    dunst
 
     #Apps
     wofi
@@ -40,6 +42,7 @@
           "nm-applet --indicator & disown"
 	  "blueman-tray"
           "gammastep-indicator"
+	  "dunst"
           "sleep 1 && waybar"
           "wofi"
           "hyprpaper"

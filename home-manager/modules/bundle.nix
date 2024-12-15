@@ -4,5 +4,6 @@
     #./dooit.nix #TODO get working with current setup
     ./packages/bundle-packages.nix
     ./nightlight.nix
+    ./direnv.nix
   ];
 }
