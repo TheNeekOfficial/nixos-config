@@ -7,5 +7,6 @@
     ./stylix.nix
     ./packages.nix
     ./nerdfont.nix
+    ./bluetooth.nix
   ];
 }

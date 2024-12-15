@@ -11,6 +11,8 @@
 
     #Network
     networkmanagerapplet
+    blueman
+
     #gnome-keyring
 
     #Apps
@@ -36,6 +38,7 @@
         # Exec on startup
         exec-once = [
           "nm-applet --indicator & disown"
+	  "blueman-tray"
           "gammastep-indicator"
           "sleep 1 && waybar"
           "wofi"
