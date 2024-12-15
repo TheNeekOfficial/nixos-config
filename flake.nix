@@ -22,7 +22,6 @@
     # Hyprland
     hyprland = {
       url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Wallpapers git setup
@@ -46,18 +45,6 @@
     wallpapers,
     ... 
   }: {
-    # TODO get working based off flake install on wiki
-    homeConfigurations."dylan@old-lapnix" = home-manager.lib.homeManagerConfiguration {
-      modules = [
-        {
-          wayland.windowManager.hyprland = {
-            enable = true;
-            package = inputs.hyprland.packages.${nixpkgs.legacyPackages.x86_64-linux.stdenv.hostPlatform.system}.hyprland;
-         };
-        }
-      ];
-    };
-   
     nixosConfigurations = {
     vm-3d = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";

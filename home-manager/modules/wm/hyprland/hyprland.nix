@@ -1,9 +1,9 @@
-{ pkgs, config, ...}:
+{ pkgs, config, inputs, hyprland, ...}:
 {
   # Taken off the internet to try and make work
   home.packages = with pkgs; [
     # Base hyprland
-    hyprland
+    #hyprland
     wayland
     xwayland
     mesa
@@ -30,8 +30,8 @@
       enable = true;
       xwayland.enable = true;
 
-      # Sets package to the hyprland git
-      #package = inputs.hyprland.packages.${nixpkgs.legacyPackages.x86_64-linux.stdenv.hostPlatform.system}.hyprland;
+      # Sets package to hyprland github
+      package = inputs.hyprland.packages.${inputs.nixpkgs.legacyPackages.x86_64-linux.stdenv.hostPlatform.system}.hyprland;
 
       settings = {
         # Allows windows key to be used
