@@ -2,5 +2,6 @@
 {
   imports = [
     ./games.nix
+    #./tmux.nix
   ];
 }

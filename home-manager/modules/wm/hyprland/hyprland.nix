@@ -40,7 +40,7 @@
         # Exec on startup
         exec-once = [
           "nm-applet --indicator & disown"
-	  "blueman-tray"
+	  "blueman-applet & disown"
           "gammastep-indicator"
 	  "dunst"
           "sleep 1 && waybar"
