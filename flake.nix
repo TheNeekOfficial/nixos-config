@@ -103,6 +103,9 @@
           # Imports nixos modules ie. kdeconnect firewall override
           ./nixos/modules/bundle.nix
 
+          # Adds swap file after install
+          ./nixos/modules/swapfile.nix
+
           # Imports stylix
           inputs.stylix.nixosModules.stylix
 
