@@ -30,6 +30,12 @@
     # Stylix for easy app customisation
     stylix.url = "github:danth/stylix";
 
+    # Neovim setup w/ nix
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # ToDo list terminal
     # TODO get working
     #dooit.url = "github:dooit-org/dooit";
@@ -43,6 +49,7 @@
     nixpkgs-stable, 
     hyprland,
     wallpapers,
+    nixvim, 
     ... 
   }: {
     nixosConfigurations = {
@@ -109,15 +116,18 @@
           # Imports stylix
           inputs.stylix.nixosModules.stylix
 
+          # Imports nixvim
+
           # Imports home-manager
           home-manager.nixosModules.home-manager
 	    {
 	      home-manager.useGlobalPkgs = true;
 	      home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs wallpapers;};
+              home-manager.extraSpecialArgs = { inherit inputs wallpapers nixvim;};
               home-manager.backupFileExtension = "backup";
               home-manager.users.dylan = {
                 imports = [
+                  #nixvim.homeManagerModules.nixvim
                   ./home-manager/home.nix
                   ./home-manager/modules/wm/hyprland/bunland.nix
                 ];
