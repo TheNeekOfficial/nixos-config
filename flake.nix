@@ -117,6 +117,7 @@
           inputs.stylix.nixosModules.stylix
 
           # Imports nixvim
+          inputs.nixvim.nixosModules.nixvim
 
           # Imports home-manager
           home-manager.nixosModules.home-manager
@@ -127,7 +128,6 @@
               home-manager.backupFileExtension = "backup";
               home-manager.users.dylan = {
                 imports = [
-                  #nixvim.homeManagerModules.nixvim
                   ./home-manager/home.nix
                   ./home-manager/modules/wm/hyprland/bunland.nix
                 ];
