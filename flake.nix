@@ -117,7 +117,6 @@
           inputs.stylix.nixosModules.stylix
 
           # Imports nixvim
-          inputs.nixvim.nixosModules.nixvim
 
           # Imports home-manager
           home-manager.nixosModules.home-manager
@@ -130,6 +129,7 @@
                 imports = [
                   ./home-manager/home.nix
                   ./home-manager/modules/wm/hyprland/bunland.nix
+                  inputs.nixvim.homeManagerModules.nixvim
                 ];
               };
 	    }

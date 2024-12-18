@@ -79,51 +79,6 @@
 	# package = pkgs-stable.git;
   };
 
-  programs.neovim = 
-        #let
-        #  toLua = str: "lua << EOF\n${str}\nEOF\n";
-        #  toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-        #in
-        {
-          enable = true;
-	  viAlias = true;
-	  vimAlias = true;
-	  vimdiffAlias = true;
-
-          plugins = with pkgs.vimPlugins; [
-	  #  
-	  #  telescope-nvim
-          #  plenary-nvim
-          #  #{
-          #  #  plugin = telescope-nvim;
-          #  #  config = toLua "require('config.telescope').setup()"; 
-          #  #}
-
-          #  telescope-fzf-native-nvim
-
-          #  nvim-cmp
-          #  cmp-nvim-lsp
-          #  cmp-buffer
-          #  cmp-nvim-lua
-          #  lspkind-nvim
-          #  cmp-path
-          #  #{
-          #  #  plugin = nvim-cmp;
-          #  #  config = toLua "require('config.cmp').setup()";
-          #  #}
-          #  nvim-lspconfig
-
-	    (nvim-treesitter.withPlugins (p: [
-	        p.tree-sitter-nix
-	        p.tree-sitter-vim
-	        p.tree-sitter-bash
-	        p.tree-sitter-python
-	    ]))
-
-	    vim-nix
-         ];
-        };
-
  # alacritty - a cross-platform, GPU-accelerated terminal emulator
   # programs.alacritty = {
   #   enable = true;
