@@ -1,43 +1,6 @@
-{ self, pkgs, config, ... }:
+{ self, nixvim, pkgs, ... }:
 {
-  #programs.neovim = {
-  #  enable = true;
-  #  viAlias = true;
-  #  vimAlias = true;
-  #  vimdiffAlias = true;
-  #};
-
-	## added to help with telescope
-	home.packages = with pkgs; [
-		fd
-		ripgrep
-	];
-
-  programs.nixvim = {
-    enable = true;
-
-    opts = {
-      number = true;
-      relativenumber = true;
-    };
-
-    autoCmd = [{
-        event = "FileType";
-        pattern = "nix";
-        command = "setlocal tabstop=2 shiftwidth=2";
-      }];
-
-    globals.mapleader = " ";
-
-    #colorschemes.catppuccin-mocha.enable = true;
-
-    # Manages plugins
-    plugins = {
-      ## Enables web dev icons
-      web-devicons.enable = true;
-
-      ## Manages telescope plugin
-      telescope = {
+	programs.nixvim.telescope = {
         enable = true;
 				keymaps = {
 					#"<C-p>" = {
@@ -123,41 +86,4 @@
 	   			};
 	  		};
 			};
-		};
-
-		## Enables nvimtree / nvims file explorer
-		# nvimtree.enable = true;
-
-		## Enables vim surround whic lets you put ( automatically )
-		vim-surround.enable = true;
-
-		## Makes LSP Server config be managed seperately
-		# nvim-lspconfig.enable = true; # Doesn't work
-		## TODO Add LSP servers needed
-
-		## enables fuzzy search
-		fzf-lua.enable = true;
-
-		## Enables dashboard aka choose your starting location
-		#dashboard = { # TODO Add settings for dashboard first - Check nixvim docs
-		#  enable = true;
-		#};
-
-		## TODO Enables status line
-		## apparently feline-nvim doesnt exist in nixvim outta box?
-
-		## Enables treesitter to make tabbing easier
-		treesitter = {
-			enable = true;
-			settings = {
-				ensure_installed = [
-					"nix"
-					"bash"
-					"python"
-				];
-				indent.enable = true;
-			};
-	 };
-	};
- };
-}
+		
