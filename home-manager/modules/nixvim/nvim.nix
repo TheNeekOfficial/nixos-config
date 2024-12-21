@@ -19,6 +19,8 @@
     opts = {
       number = true;
       relativenumber = true;
+			tabstop = 2;
+			shiftwidth = 2;
     };
 
     autoCmd = [{
@@ -154,10 +156,18 @@
 					"nix"
 					"bash"
 					"python"
+					"csv"
 				];
 				indent.enable = true;
 			};
-	 };
+		};
+		refactoring = {
+			enable = true;
+			enableTelescope = true;
+			settings = {
+				show_success_message = true;
+			};
+		};
 	};
  };
 }
