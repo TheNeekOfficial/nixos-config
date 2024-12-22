@@ -3,6 +3,6 @@
 	boot.initrd.systemd.enable = true;
   swapDevices = [{
     device = "/swapfile";
-    size = 20 * 1024; # 20GB
+    size = 16 * 1024; # 16GB
   }];
 }
