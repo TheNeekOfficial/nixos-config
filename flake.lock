@@ -120,6 +120,22 @@
         "type": "github"
       }
     },
+    "dotfiles": {
+      "locked": {
+        "lastModified": 1735028278,
+        "narHash": "sha256-fYlNxylmbFNzE36txOMRxSoIWEcg0C/EfUXuKFbmSXw=",
+        "owner": "TheNeekOfficial",
+        "repo": "dotfiles",
+        "rev": "eb2d2306065adca7c04d4f3eb199702aea2c18c0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TheNeekOfficial",
+        "ref": "nix-main",
+        "repo": "dotfiles",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -822,6 +838,7 @@
     },
     "root": {
       "inputs": {
+        "dotfiles": "dotfiles",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "nixpkgs": "nixpkgs_2",

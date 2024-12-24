@@ -3,6 +3,7 @@
   imports = [
     ./games.nix
 		./general.nix
-    #./tmux.nix
+    ./tmux.nix
+    ./nvim.nix
   ];
 }

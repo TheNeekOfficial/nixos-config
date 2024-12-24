@@ -13,10 +13,10 @@
     home-manager = {
     	url = "github:nix-community/home-manager/master";
 	
-	# Follows keyword is used for inheritance
-	# Inputs.pkgs is kept consistent to version of home manager
-	# to avoid problem caused by different version of nixpkgs
-	inputs.nixpkgs.follows = "nixpkgs";
+			# Follows keyword is used for inheritance
+			# Inputs.pkgs is kept consistent to version of home manager
+			# to avoid problem caused by different version of nixpkgs
+			inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Hyprland
@@ -26,6 +26,9 @@
 
     # Wallpapers git setup
     wallpapers.url = "github:TheNeekOfficial/wallpapers"; 
+
+		# dotfiles git setup
+		dotfiles.url = "github:TheNeekOfficial/dotfiles";
 
     # Stylix for easy app customisation
     stylix.url = "github:danth/stylix";
