@@ -13,10 +13,10 @@
     home-manager = {
     	url = "github:nix-community/home-manager/master";
 	
-			# Follows keyword is used for inheritance
-			# Inputs.pkgs is kept consistent to version of home manager
-			# to avoid problem caused by different version of nixpkgs
-			inputs.nixpkgs.follows = "nixpkgs";
+	# Follows keyword is used for inheritance
+	# Inputs.pkgs is kept consistent to version of home manager
+	# to avoid problem caused by different version of nixpkgs
+	inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Hyprland
@@ -27,17 +27,11 @@
     # Wallpapers git setup
     wallpapers.url = "github:TheNeekOfficial/wallpapers"; 
 
-		# dotfiles git setup
-		dotfiles.url = "github:TheNeekOfficial/dotfiles";
+    # dotfiles git setup
+    dotfiles.url = "github:TheNeekOfficial/dotfiles";
 
     # Stylix for easy app customisation
     stylix.url = "github:danth/stylix";
-
-    # Neovim setup w/ nix
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     # ToDo list terminal
     # TODO get working
@@ -52,7 +46,6 @@
     nixpkgs-stable, 
     hyprland,
     wallpapers,
-    nixvim, 
     ... 
   }: {
     nixosConfigurations = {
@@ -119,20 +112,17 @@
           # Imports stylix
           inputs.stylix.nixosModules.stylix
 
-          # Imports nixvim
-
           # Imports home-manager
           home-manager.nixosModules.home-manager
 	    {
 	      home-manager.useGlobalPkgs = true;
 	      home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs wallpapers nixvim;};
+              home-manager.extraSpecialArgs = { inherit inputs wallpapers ;};
               home-manager.backupFileExtension = "backup";
               home-manager.users.dylan = {
                 imports = [
                   ./home-manager/home.nix
                   ./home-manager/modules/wm/hyprland/bunland.nix
-                  inputs.nixvim.homeManagerModules.nixvim
                 ];
               };
 	    }
