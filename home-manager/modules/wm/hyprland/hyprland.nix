@@ -40,9 +40,9 @@
         # Exec on startup
         exec-once = [
           "nm-applet --indicator & disown"
-	  "blueman-applet & disown"
+	        "blueman-applet & disown"
           "gammastep-indicator"
-	  "dunst"
+	        "dunst"
           "sleep 1 && waybar"
           "wofi"
           "hyprpaper"
@@ -58,6 +58,7 @@
             "$mod, SPACE, exec, wofi --show run"
             "$mod, E, exec, dolphin"
             "$mod ALT, E, exec, systemsettings"
+            "$mod, D, exec, vesktop"
 
             # Window control
             "$mod, q, killactive"
