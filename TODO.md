@@ -5,6 +5,6 @@
 	- [ ] 1-4. Other Stuff
 - [ ] 2. Hyprlock & Hypridle
 	- [ ] 2-1. Look into more
-- [ ] 3.  Neovim
-	- [ ] 3-1. Get plugins working properly
+- [x] 3.  Neovim
+	- [x] 3-1. Get plugins working properly
 - [ ] 4. Bigger stuff refer to issues page
