@@ -8,7 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      # Modifications done for this host
       ./intel-gpu.nix
+      ./kernel-update.nix
     ];
 
   # Bootloader.
