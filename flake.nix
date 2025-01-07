@@ -128,6 +128,43 @@
 	    }
 	];
      };	
+
+  new-lapnix = nixpkgs.lib.nixosSystem rec {
+	system = "x86_64-linux";
+	specialArgs = {
+	  inherit inputs;
+	  pkgs-stable = import nixpkgs-stable {
+	    inherit system;
+	    config.allowUnfree = true;
+	  };
+	};
+	modules = [
+
+          # Imports old config
+          ./hosts/new-acer/configuration.nix
+
+          # Imports nixos modules ie. kdeconnect firewall override
+          ./nixos/modules/bundle.nix
+
+          # Imports stylix
+          inputs.stylix.nixosModules.stylix
+
+          # Imports home-manager
+          home-manager.nixosModules.home-manager
+	    {
+	      home-manager.useGlobalPkgs = true;
+	      home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs wallpapers ;};
+              home-manager.backupFileExtension = "backup";
+              home-manager.users.dylan = {
+                imports = [
+                  ./home-manager/home.nix
+                  ./home-manager/modules/wm/hyprland/bunland.nix
+                ];
+              };
+	    }
+	];
+     };	
    
    
    #let
