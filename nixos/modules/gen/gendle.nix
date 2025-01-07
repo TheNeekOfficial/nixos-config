@@ -8,5 +8,6 @@
     ./packages.nix
     ./nerdfont.nix
     ./bluetooth.nix
+    ./flake-nix.nix
   ];
 }
