@@ -30,39 +30,43 @@
 
   home.packages = with pkgs; [
   	
-	# terminal screens
-	fastfetch
-	cowsay
-	cmatrix
-	cbonsai
+	  # terminal screens
+	  fastfetch
+	  cowsay
+	  cmatrix
+	  cbonsai
 
-	# archives
-	zip
-	unzip
+	  # archives
+	  zip
+	  unzip
 
-	# misc
-	file
-	which
-	tree
-	eza
-        git
-        bat
-        
-        # productivity
-	btop # replaces htop/nmon
-        qownnotes
+	  # misc
+	  file
+	  which
+	  tree
+	  eza
+    git
+    bat
 
-	# Chats
-        vesktop
+    # Terminal help tools
+    brightnessctl # Brightness tool for terminall
+    acpi # Check battery from terminal
 
-        # KDE
-        kdePackages.kdeconnect-kde
+    # productivity
+	  btop # replaces htop/nmon
+    obsidian
 
-	# For laptop
-	# https://nixos.wiki/wiki/Laptop 
+	  # Chats
+    vesktop
 
-	# For stable versions
-	# pkgs-stable.a etc.
+    # KDE
+    kdePackages.kdeconnect-kde
+
+	  # For laptop
+	  # https://nixos.wiki/wiki/Laptop 
+
+	  # For stable versions
+	  # pkgs-stable.a etc.
   ];
   
   #home.file.".config/discord" = {
@@ -72,14 +76,14 @@
 
   programs.git = {
   	enable = true;
-	userName = "TheNeekOfficial";
-	userEmail = "dylan_leslie05@yahoo.com.au";
+	  userName = "TheNeekOfficial";
+	  userEmail = "dylan_leslie05@yahoo.com.au";
 
-	# TO use stable version
-	# package = pkgs-stable.git;
+	  # TO use stable version
+	  # package = pkgs-stable.git;
   };
 
- # alacritty - a cross-platform, GPU-accelerated terminal emulator
+  # alacritty - a cross-platform, GPU-accelerated terminal emulator
   # programs.alacritty = {
   #   enable = true;
   #   # custom settings
@@ -108,6 +112,9 @@
     #   urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
     #   urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
     # };
+
+
+
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
