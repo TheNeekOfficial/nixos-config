@@ -13,7 +13,7 @@ in
       splash_offset = 2.0;
 
         # Loads the wallpapers
-      preload = [ 
+      preload = [
         wallpaper
       ];
 

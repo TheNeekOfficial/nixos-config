@@ -62,7 +62,7 @@
 
             # Window control
             "$mod, q, killactive"
-            "ALT, F4, killactive" # As an alt way
+            # "ALT, F4, killactive" # As an alt way
             "$mod, F, fullscreen"
             "$mod SHIFT, F, togglefloating,"
 
@@ -90,6 +90,7 @@
             "$mod SHIFT, 9, movetoworkspace, 9"
             "$mod SHIFT, 0, movetoworkspace, 10"
             "ALT, TAB, workspace, e+1"
+            "ALT SHIFT, TAB, workspace, e-1"
 
             # Moving focus w/ vim keys
             "$mod, h, movefocus, l"
