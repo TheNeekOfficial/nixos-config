@@ -112,6 +112,9 @@
             # Imports stylix
             inputs.stylix.nixosModules.stylix
 
+            # Imports Hyprland
+            ./nixos/modules/hyprland/bunland.nix
+
             # Imports home-manager
             home-manager.nixosModules.home-manager
 	          {
@@ -150,7 +153,7 @@
             inputs.stylix.nixosModules.stylix
 
             # Imports hyprland
-            ./nixos/modules/hyprland.nix
+            ./nixos/modules/hyprland/bunland.nix
 
             # Imports home-manager
             home-manager.nixosModules.home-manager

@@ -101,11 +101,11 @@
     },
     "dotfiles": {
       "locked": {
-        "lastModified": 1736149297,
-        "narHash": "sha256-TpnrZM3z4x1v3bvTHNW4Yuv4xEoidZS7Y2ce2zTiUVA=",
+        "lastModified": 1736318154,
+        "narHash": "sha256-IodgQPaeXetNoAHdCNYU90QVTZSdH3jYj7proG6NTDU=",
         "owner": "TheNeekOfficial",
         "repo": "dotfiles",
-        "rev": "212a0742e43bb7b38d54b58e5921dde7933179f7",
+        "rev": "58a900a6a9a989ce3d9c83aaffea5156f2666a5f",
         "type": "github"
       },
       "original": {
@@ -765,11 +765,11 @@
     },
     "wallpapers": {
       "locked": {
-        "lastModified": 1733143143,
-        "narHash": "sha256-YUCv4B9wan/k+BGACskeTTRpa1IbP27Lhi7Erj8ec9w=",
+        "lastModified": 1736325534,
+        "narHash": "sha256-YjClFGPx2X3GlBp3EHbq8KU3r/yC9S4LUIJHVNZg+fc=",
         "owner": "TheNeekOfficial",
         "repo": "wallpapers",
-        "rev": "68aac038d2a38ecbfa41aa06e42c8cd53a2f34e4",
+        "rev": "747c78aa9b71e69e196b7e23688ef18a29e267f6",
         "type": "github"
       },
       "original": {
