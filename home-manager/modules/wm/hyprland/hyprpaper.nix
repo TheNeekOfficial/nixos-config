@@ -1,7 +1,9 @@
 { config, wallpapers, ... }:
 
 let 
-  wallpaper = "${wallpapers.wallpapers.path}/nixos-wallpaper-catppuccin-mocha.png";
+  nix-wallpaper = "${wallpapers.wallpapers.path}/nixos-wallpaper-catppuccin-mocha.png";
+  cloudy-wallpaper = "${wallpapers.wallpapers.path}/anime-cloudy.png";
+  beach-wallpaper = "${wallpapers.wallpapers.path}/anime-beach.jpeg";
 in
 {
   services.hyprpaper = {
@@ -14,12 +16,14 @@ in
 
         # Loads the wallpapers
       preload = [
-        wallpaper
+        nix-wallpaper
+        cloudy-wallpaper
+        beach-wallpaper
       ];
 
         # Sets the wallpapers
       wallpaper = [
-        ", ${wallpaper}"
+        ", ${beach-wallpaper}"
       ];
     };
   };

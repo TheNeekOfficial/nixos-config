@@ -21,6 +21,7 @@
     wofi
     waybar
     hyprpaper
+    waypaper # GUI wallpaper manager
   ];
 
   # WM
