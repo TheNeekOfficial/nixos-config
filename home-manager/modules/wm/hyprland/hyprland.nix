@@ -21,7 +21,10 @@
     wofi
     waybar
     hyprpaper
-    waypaper # GUI wallpaper manager
+
+    # Lock Screen
+    hyprlock # Works once in hyprland but not on boot
+    waypaper
   ];
 
   # WM
@@ -60,6 +63,7 @@
             "$mod, E, exec, dolphin"
             "$mod ALT, E, exec, systemsettings"
             "$mod, D, exec, vesktop"
+            "$mod ALT, W, exec, waypaper" # GUI wallpaper manager
 
             # Window control
             "$mod, q, killactive"
