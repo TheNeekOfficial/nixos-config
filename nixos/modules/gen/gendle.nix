@@ -9,5 +9,6 @@
     ./nerdfont.nix
     ./bluetooth.nix
     ./flake-nix.nix
+    ./sddm.nix
   ];
 }
