@@ -1,6 +1,5 @@
 { pkgs, config, inputs, hyprland, ...}:
 {
-  # Taken off the internet to try and make work
   home.packages = with pkgs; [
     # Base hyprland
     #hyprland
@@ -68,6 +67,7 @@
             # Window control
             "$mod, q, killactive"
             # "ALT, F4, killactive" # As an alt way
+
             "$mod, F, fullscreen"
             "$mod SHIFT, F, togglefloating,"
 
@@ -108,10 +108,47 @@
             "$mod SHIFT, l, swapwindow, r"
             "$mod SHIFT, k, swapwindow, u"
             "$mod SHIFT, j, swapwindow, d"
+            
+            # Dwindle Window layout options
+            # "$mod ALT, j, togglesplit" # No idea what this does
+            "$mod, p, pseudo" # Makes screen smaller typa style
+
+            # Waybar open/close
+            "$mod, B, exec, pkill -SIGUSR1 waybar"
 
             # Exit Hypr
             "$mod, M, exit"
+
+            # NOTE: FN keys
+
+            # Volume Control
+            ", XF86AudioMute, exec, wpctl set-mute 59 toggle"
+
+            # Mic control cos Fn key doesnt work
+            "CTRL, F4, exec, wpctl set-mute 61 toggle"
           ];
+
+        # NOTE: binde = can repeat when held
+        binde = [
+            # Volume Control
+            ", XF86AudioLowerVolume, exec, wpctl set-volume 59 5%-"
+            ", XF86AudioRaiseVolume, exec, wpctl set-volume 59 5%+"
+
+            # Brightness Control
+            ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+            ", XF86MonBrightnessUp, exec, brightnessctl s 10%+"
+        ];
+
+        # NOTE: bindm = mouse binds
+        bindm = [
+          # Mouse binds
+          "$mod, mouse:272, movewindow"
+          "$mod, mouse:273, resizewindow"
+          
+          # Keyboard binds w/ mouse
+          "$mod, Control_L, movewindow"
+          "$mod, ALT_L, resizewindow"
+        ];
 
         # TODO change on laptop
         #monitor = "Virtual-1,1920x1080@59.96";
