@@ -12,6 +12,7 @@
       # Modifications done for this host
       ./intel-gpu.nix
       ./kernel-update.nix
+      # ./fingerprint.nix # NOTE: Doesn't work
     ];
 
   # Bootloader.
