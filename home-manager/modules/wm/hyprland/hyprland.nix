@@ -1,8 +1,8 @@
-{ pkgs, config, inputs, hyprland, ...}:
+{ pkgs, config, inputs, ...}:
 {
   home.packages = with pkgs; [
     # Base hyprland
-    #hyprland
+    hyprland
     wayland
     xwayland
     mesa
@@ -32,9 +32,6 @@
   wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
-
-      # Sets package to hyprland github
-      package = inputs.hyprland.packages.${inputs.nixpkgs.legacyPackages.x86_64-linux.stdenv.hostPlatform.system}.hyprland;
 
       settings = {
         # Allows windows key to be used
@@ -110,7 +107,6 @@
             "$mod SHIFT, j, swapwindow, d"
             
             # Dwindle Window layout options
-            # "$mod ALT, j, togglesplit" # No idea what this does
             "$mod, p, pseudo" # Makes screen smaller typa style
 
             # Waybar open/close
@@ -148,6 +144,11 @@
           # Keyboard binds w/ mouse
           "$mod, Control_L, movewindow"
           "$mod, ALT_L, resizewindow"
+        ];
+
+        # Rules for windows inc. opacity and where to put them etc.
+        windowrule = [
+          "opacity 0.9, kitty"
         ];
 
         # TODO change on laptop

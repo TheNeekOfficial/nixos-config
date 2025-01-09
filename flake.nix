@@ -19,11 +19,6 @@
 	    inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Hyprland
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-    };
-
     # Wallpapers git setup
     wallpapers.url = "github:TheNeekOfficial/wallpapers"; 
 
@@ -44,7 +39,6 @@
     nixpkgs, 
     home-manager, 
     nixpkgs-stable, 
-    hyprland,
     wallpapers,
     ... 
   }: {
