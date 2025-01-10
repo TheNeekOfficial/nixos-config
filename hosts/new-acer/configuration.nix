@@ -12,6 +12,7 @@
       # Modifications done for this host
       ./intel-gpu.nix
       ./kernel-update.nix
+      ./ollama-ai.nix
       # ./fingerprint.nix # NOTE: Doesn't work
     ];
 
