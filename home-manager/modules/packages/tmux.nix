@@ -15,26 +15,27 @@
     plugins = with pkgs.tmuxPlugins; [
       # NOTE: set theme at first
 
-      {
-        plugin = catppuccin; 
-        extraConfig = ''
-          set -g @catppuccin_flavor "mocha"
-          set -g @catppuccin_window_status_style "rounded"
+      # {
+      #   plugin = catppuccin; 
+      #   extraConfig = ''
+      #     set -g @catppuccin_flavor "mocha"
+      #     set -g @catppuccin_window_status_style "rounded"
+      #     # set -g @catppuccin_pane_right_separator "|"
+      #
+      #     set -g status-right-length 100
+      #     set -g status-left-length 100
+      #     set -g status-left ""
+      #
+      #     # Sets statuses to catppuccin specific ones
+      #     # set -g status-right "#{E:@catppuccin_status_application}"
+      #     # set -agF status-right "#{E:@catppuccin_status_cpu}"
+      #     # set -ag status-right "#{E:@catppuccin_status_session}"
+      #     # set -ag status-right "#{E:@catppuccin_status_uptime}"
+      #     # set -agF status-right "#{E:@catppuccin_status_battery}"
+      #     '';
+      # }
 
-          set -g status-right-length 100
-          set -g status-left-length 100
-          set -g status-left ""
-
-          # Sets statuses to catppuccin specific ones
-          # set -g status-right "#{E:@catppuccin_status_application}"
-          # set -agF status-right "#{E:@catppuccin_status_cpu}"
-          # set -ag status-right "#{E:@catppuccin_status_session}"
-          # set -ag status-right "#{E:@catppuccin_status_uptime}"
-          # set -agF status-right "#{E:@catppuccin_status_battery}"
-          '';
-      }
-
-      # NOTE: For Catppuccin 
+      # NOTE: For Catppuccin | Couldnt get to work
       # {
       #   plugin = cpu;
       #   extraConfig = ''
@@ -44,7 +45,7 @@
       #     '';
       # }
 
-      # NOTE: For Catppuccin theme
+      # NOTE: For Catppuccin theme | Couldnt get to work
 
       # {
       #   plugin = battery;
@@ -53,7 +54,7 @@
       #     '';
       # }
 
-      # NOTE: Tokyo Night Theme
+      # NOTE: Tokyo Night Theme | Not done cba rn
       # {
       #   plugin = tokyo-night-tmux; 
       #   extraConfig = ''
@@ -86,8 +87,8 @@
       {
         plugin = sysstat;
         extraConfig = ''
-          set -g status-right ""
-          set -g status-right "#{sysstat_cpu} | #{sysstat_mem} | #{sysstat_swap} |"
+          set -g status-right " | #{sysstat_cpu} | #{sysstat_mem} | #{sysstat_swap}"
+          # set -aog status-left "#{sysstat_cpu} | #{sysstat_mem} | #{sysstat_swap} |"
           '';
       }
 
@@ -96,7 +97,7 @@
 
         plugin = battery;
         extraConfig = ''
-         set -ag status-right '#{battery_status_bg} Batt: #{battery_icon} #{battery_percentage} #{battery_remain}'
+          set -ag status-right ' | #{battery_status_bg} Batt: #{battery_icon} #{battery_percentage} #{battery_remain}'
           set -g status-right-length '150'
           '';
       }
@@ -117,6 +118,13 @@
 			
 			# Adds current time to status bar
 			set -ag status-right ' | %a %h-%d %H:%M'
+
+			# Resets everything if nothing has been set
+			set -og status-left ""
+			set -og status-right ""
+			set -og window-status-format "#I:#W#F"
+			set -og window-status-current-format "#I:#W#F"
+			set -og window-status-separator "|"
      '';
   };
 }
