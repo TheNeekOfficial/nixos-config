@@ -24,6 +24,12 @@
     # Lock Screen
     hyprlock # Works once in hyprland but not on boot
     waypaper
+
+		# Screenshots
+		grim
+		slurp
+		swappy
+		wl-clipboard
   ];
 
   # WM
@@ -122,6 +128,10 @@
 
             # Mic control cos Fn key doesnt work
             "CTRL, F4, exec, wpctl set-mute 61 toggle"
+
+            # Screenshots
+            # TODO: Get setup w/ correct FN F12 setup
+            "CTRL, F12, exec, grim -g \"$(slurp)\" - | swappy -f -"
           ];
 
         # NOTE: binde = can repeat when held
@@ -147,8 +157,13 @@
         ];
 
         # Rules for windows inc. opacity and where to put them etc.
-        windowrule = [
-          "opacity 0.9, kitty"
+        windowrulev2 = [
+          "opacity 0.9, class:kitty"
+          "float, title:(Picture-in-Picture)"
+          "size 30% 30%, title:(Picture-in-Picture)"
+          "move 1005 31, title:(Picture-in-Picture)"
+          "pin, title:(Picture-in-Picture)"
+          "workspace 9, title:Steam"
         ];
 
         # TODO change on laptop
