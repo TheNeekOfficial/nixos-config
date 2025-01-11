@@ -6,5 +6,6 @@
     ./tmux.nix
     ./nvim.nix
     ./spotify.nix
+    ./vesktop.nix
   ];
 }

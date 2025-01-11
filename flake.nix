@@ -28,6 +28,12 @@
     # Stylix for easy app customisation
     stylix.url = "github:danth/stylix";
 
+    # Enables controlling vesktop declaritively through nix
+    vesktop-nix = {
+      url = "github:PierreBorine/vesktop-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # ToDo list terminal
     # TODO get working
     #dooit.url = "github:dooit-org/dooit";

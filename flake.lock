@@ -301,6 +301,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
         "stylix": "stylix",
+        "vesktop-nix": "vesktop-nix",
         "wallpapers": "wallpapers"
       }
     },
@@ -397,6 +398,26 @@
       "original": {
         "owner": "tinted-theming",
         "repo": "tinted-tmux",
+        "type": "github"
+      }
+    },
+    "vesktop-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1731527104,
+        "narHash": "sha256-wrO9wKi8QWke8QZslRsmv+RYIGiRarPbBzAiqdmrLfk=",
+        "owner": "PierreBorine",
+        "repo": "vesktop-nix",
+        "rev": "31ee11cdb159cef42190b67e287024486fb2d33a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "PierreBorine",
+        "repo": "vesktop-nix",
         "type": "github"
       }
     },
