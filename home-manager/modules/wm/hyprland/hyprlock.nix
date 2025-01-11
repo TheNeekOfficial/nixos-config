@@ -8,8 +8,8 @@ in
 
     settings = lib.mkForce {
       general = {
-        # disable_loading_bar = true;
-        # grace = 300;
+        disable_loading_bar = true;
+        # grace = 30; # Sets 30s timer to where cna get back in w/o password NOTE: Means also applies after turned back on w/ hypridle
         no_fade_in = false;
       };
 
