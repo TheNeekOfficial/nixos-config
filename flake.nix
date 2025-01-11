@@ -149,6 +149,9 @@
             # Imports hyprland
             ./nixos/modules/hyprland/bunland.nix
 
+            # Imports battery optimisations
+            ./nixos/modules/battery/batt-bundle.nix
+
             # Imports home-manager
             home-manager.nixosModules.home-manager
 	          {
