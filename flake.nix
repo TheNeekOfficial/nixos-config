@@ -28,12 +28,6 @@
     # Stylix for easy app customisation
     stylix.url = "github:danth/stylix";
 
-    # Enables controlling vesktop declaritively through nix
-    vesktop-nix = {
-      url = "github:PierreBorine/vesktop-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # ToDo list terminal
     # TODO get working
     #dooit.url = "github:dooit-org/dooit";
@@ -149,9 +143,6 @@
             # Imports nixos modules ie. kdeconnect firewall override
             ./nixos/modules/bundle.nix
 
-            # Imports stylix
-            inputs.stylix.nixosModules.stylix
-
             # Imports hyprland
             ./nixos/modules/hyprland/bunland.nix
 
@@ -165,6 +156,10 @@
 	            home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs wallpapers ;};
               home-manager.backupFileExtension = "hm-backup";
+
+              # NOTE: Disables vesktop as using Freesia's css
+              # home-manager.sharedModules = [{ stylix.targets.vesktop.enable = false; }];
+
               home-manager.users.dylan = {
                 imports = [
                   ./home-manager/home.nix

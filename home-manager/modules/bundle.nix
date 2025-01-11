@@ -5,6 +5,5 @@
     ./packages/bundle-packages.nix
     ./nightlight.nix
     ./direnv.nix
-		#./nixvim/nvim.nix # Replacing w/ my LazyVim setup for reproducibility on any systemm
   ];
 }
