@@ -14,6 +14,9 @@ in
     # NOTE: Already installed in hyprland.nix but still 
     # Enables brightnessctl
     brightnessctl
+
+    # Enables playerctl
+    playerctl
   ];
 
   services.hypridle = {
@@ -21,10 +24,10 @@ in
     settings = {
 
       general = {
-        lock_cmd = "pidof hyprlock || hyprlock";
+        lock_cmd = "playerctl -a pause & pidof hyprlock || hyprlock";
         ignore_dbus_inhibit = false;
         before_sleep_cmd = "loginctl lock-session";
-        after_sleep_cmd = "hyprctl dispatch dpms on";
+        # after_sleep_cmd = "hyprctl dispatch dpms on";
       };
 
       # NOTE: All whilst being idle
@@ -48,7 +51,7 @@ in
         {
           timeout = lock-time + 30;
           on-timeout = "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dmps on";
+          on-resume = "hyprctl dispatch dpms on";
         }
 
         # Suspend and hibernate after shutdown-time seconds

@@ -6,9 +6,8 @@
   services.tlp = {
     enable = true;
 
-    # NOTE: Trying to fix battery stopping charging at 79%
     settings = {
-      STOP_CHARGE_THRESH_BAT0 = 100; 
+      # STOP_CHARGE_THRESH_BAT0 = 100; # NOTE: Didn't work to fix issue but will keep in mind if I do
 
       # NOTE: Make Rival 5 mice not suspend after boot
       USB_AUTOSUSPEND = 0;

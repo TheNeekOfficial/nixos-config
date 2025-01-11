@@ -47,7 +47,7 @@
         # Exec on startup
         exec-once = [
           "nm-applet --indicator & disown"
-	        "blueman-applet & disown"
+	        "blueman-applet"
           "gammastep-indicator"
 	        "dunst"
           "sleep 1 && waybar"
@@ -68,6 +68,7 @@
             "$mod ALT, E, exec, systemsettings"
             "$mod, D, exec, vesktop"
             "$mod ALT, W, exec, waypaper" # GUI wallpaper manager
+            "$mod, S, exec, spotify && sleep 2 && playerctl -p spotify play"
 
             # Window control
             "$mod, q, killactive"
@@ -120,6 +121,10 @@
             # Waybar open/close
             "$mod, B, exec, pkill -SIGUSR1 waybar"
 
+            # Video/Music playback control
+            "$mod SHIFT, p, exec, playerctl play-pause"
+            "$mod CTRL, p, exec, playerctl -a pause"
+
             # Exit Hypr
             "$mod, M, exit"
 
@@ -153,8 +158,8 @@
           "$mod, mouse:273, resizewindow"
           
           # Keyboard binds w/ mouse
-          "$mod, Control_L, movewindow"
-          "$mod, ALT_L, resizewindow"
+          "$mod Control_L, w, movewindow"
+          "$mod ALT_L , r, resizewindow"
         ];
 
         # Rules for windows inc. opacity and where to put them etc.
@@ -175,6 +180,9 @@
 
           # Sets firefox to desktop 2
           "workspace 2, class:firefox"
+
+          # Sets spotify to desktop 10
+          "workspace 10, class:spotify"
         ];
 
         # TODO change on laptop

@@ -115,16 +115,19 @@
 			bind -n M-K select-pane -U
 			bind -n M-J select-pane -D
 			bind -n M-L select-pane -R
+
+			# Sets mouse to scroll term
+			setw -g mouse on
 			
 			# Adds current time to status bar
 			set -ag status-right ' | %a %h-%d %H:%M'
 
 			# Resets everything if nothing has been set
-			set -og status-left ""
-			set -og status-right ""
-			set -og window-status-format "#I:#W#F"
-			set -og window-status-current-format "#I:#W#F"
-			set -og window-status-separator "|"
-     '';
+			# set -og status-left ""
+			# set -og status-right ""
+			# set -og window-status-format "#I:#W#F"
+			# set -og window-status-current-format "#I:#W#F"
+			# set -og window-status-separator "|"
+			  '';
   };
 }

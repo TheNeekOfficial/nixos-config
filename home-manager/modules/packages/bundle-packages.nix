@@ -5,5 +5,6 @@
 		./general.nix
     ./tmux.nix
     ./nvim.nix
+    ./spotify.nix
   ];
 }
