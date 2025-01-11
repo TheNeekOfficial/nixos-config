@@ -20,10 +20,11 @@
     wofi
     waybar
     hyprpaper
+    waypaper
 
     # Lock Screen
     hyprlock # Works once in hyprland but not on boot
-    waypaper
+    hypridle # Enables idle automation on screen close w/ hyprland
 
 		# Screenshots
 		grim
@@ -52,6 +53,7 @@
           "sleep 1 && waybar"
           "wofi"
           "hyprpaper"
+          # NOTE: Don't include hypridle as activated w/ ./hypridle.nix OTHERWISE IT WILL BREAK SYSTEM
         ];
 
         # Sets keybindings for things
@@ -123,11 +125,8 @@
 
             # NOTE: FN keys
 
-            # Volume Control
-            ", XF86AudioMute, exec, wpctl set-mute 59 toggle"
-
             # Mic control cos Fn key doesnt work
-            "CTRL, F4, exec, wpctl set-mute 61 toggle"
+            "CTRL, F4, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
             # Screenshots
             # TODO: Get setup w/ correct FN F12 setup
@@ -137,8 +136,10 @@
         # NOTE: binde = can repeat when held
         binde = [
             # Volume Control
-            ", XF86AudioLowerVolume, exec, wpctl set-volume 59 5%-"
-            ", XF86AudioRaiseVolume, exec, wpctl set-volume 59 5%+"
+            ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+            ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+            ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+
 
             # Brightness Control
             ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
@@ -159,11 +160,21 @@
         # Rules for windows inc. opacity and where to put them etc.
         windowrulev2 = [
           "opacity 0.9, class:kitty"
+
+          # Sets Picture in Picture to top right and pinned to all screens
           "float, title:(Picture-in-Picture)"
           "size 30% 30%, title:(Picture-in-Picture)"
           "move 1005 31, title:(Picture-in-Picture)"
           "pin, title:(Picture-in-Picture)"
-          "workspace 9, title:Steam"
+
+          # Sets steam to desktop 9
+          "workspace 9, title:Steam" 
+
+          # Sets discord to desktop 8
+          "workspace 8, class:vesktop" 
+
+          # Sets firefox to desktop 2
+          "workspace 2, class:firefox"
         ];
 
         # TODO change on laptop

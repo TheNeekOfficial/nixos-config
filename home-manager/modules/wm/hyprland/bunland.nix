@@ -2,8 +2,9 @@
   imports = [
     ./kitty.nix
     ./waybar/waybundle.nix
-    # ./hyprpaper.nix
+    ./hyprpaper.nix
     ./hyprland.nix
     ./hyprlock.nix
+    ./hypridle.nix
   ];
 }
