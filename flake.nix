@@ -149,6 +149,9 @@
             # Imports battery optimisations
             ./nixos/modules/battery/batt-bundle.nix
 
+            # Import swappiness control to limit how much my system swaps
+            ./nixos/modules/swappiness-control.nix
+
             # Imports home-manager
             home-manager.nixosModules.home-manager
 	          {

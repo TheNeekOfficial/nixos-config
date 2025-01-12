@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, lib, ... }:
+{ pkgs, lib, ... }:
 let
   # Freesia's discord css
   monokai-pro-css = pkgs.fetchFromGitHub {
