@@ -1,9 +1,9 @@
 {
   pkgs,
-  dotfiles,
+  inputs,
   ...
 }: let
-  my-nvim = "${dotfiles}/.config/nvim";
+  my-nvim = "${inputs.dotfiles}/.config/nvim";
 in {
   programs.neovim = {
     enable = true;
@@ -19,12 +19,25 @@ in {
       lazygit
       ripgrep
 
-      # LSP's
+      # NOTE: LSP's
+
+      # Nix
       nixd
       # rnix # NOTE: Not in nixpkgs
 
-      # Formats
+      # Python
+      python312Packages.python-lsp-server
+
+      # Lua
+      # lua53Packages.lua-lsp # NOTE: Couldn't get working w/ lspconfig
+
+      # NOTE: Formatters
+
+      # Nix
       alejandra
+
+      # Lua
+      # stylua
     ];
   };
 
