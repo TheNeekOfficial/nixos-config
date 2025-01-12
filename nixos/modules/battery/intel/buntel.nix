@@ -1,7 +1,7 @@
 { self, ... }:
 {
   imports = [
-    ./powertop.nix
+    # ./powertop.nix
     ./thermald.nix
   ];
 }
