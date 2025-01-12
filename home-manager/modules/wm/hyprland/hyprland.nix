@@ -54,6 +54,7 @@
           "wofi"
           "hyprpaper"
           # NOTE: Don't include hypridle as activated w/ ./hypridle.nix OTHERWISE IT WILL BREAK SYSTEM
+          "kitty"
         ];
 
         # Sets keybindings for things
@@ -116,14 +117,19 @@
             "$mod SHIFT, j, swapwindow, d"
             
             # Dwindle Window layout options
-            "$mod, p, pseudo" # Makes screen smaller typa style
+            # also togglesplit as an option but idk what it does
+            "$mod, t, pseudo" # Makes screen smaller typa style
 
             # Waybar open/close
             "$mod, B, exec, pkill -SIGUSR1 waybar"
 
             # Video/Music playback control
-            "$mod SHIFT, p, exec, playerctl play-pause"
+            "$mod, p, exec, playerctl play-pause"
+            "$mod ALT, p, exec, playerctl -p spotify play-pause" # specifically target spotify w/ alt
             "$mod CTRL, p, exec, playerctl -a pause"
+            "$mod CTRL, k, exec, playerctl next" # Means skip to next song
+            "$mod CTRL, j, exec, playerctl previous" # Means skip to previous song
+            # More under binde
 
             # Exit Hypr
             "$mod, M, exit"
@@ -144,6 +150,9 @@
             ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
             ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
             ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+            # Spotify Volume Control
+            "SHIFT, XF86AudioLowerVolume, exec, playerctl -p spotify volume 0.1-" 
+            "SHIFT, XF86AudioRaiseVolume, exec, playerctl -p spotify volume 0.1+" 
 
 
             # Brightness Control
@@ -165,6 +174,7 @@
         # Rules for windows inc. opacity and where to put them etc.
         windowrulev2 = [
           "opacity 0.9, class:kitty"
+          "workspace 1, class:kitty"
 
           # Sets Picture in Picture to top right and pinned to all screens
           "float, title:(Picture-in-Picture)"
