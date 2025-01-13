@@ -1,4 +1,6 @@
-{...}: {
+{...}: let
+  tmuxinator-config = ".config/tmuxinator";
+in {
   # NOTE: Enables tmuxinator
   programs.tmux.tmuxinator.enable = true;
 
@@ -10,7 +12,7 @@
     };
   };
 
-  home.file."config/tmuxinator/gen.yml" = {
+  home.file."${tmuxinator-config}/gen.yml" = {
     text = ''
       # /home/dylan/.config/tmuxinator/gen.yml
 
@@ -33,7 +35,7 @@
     '';
   };
 
-  home.file."config/tmuxinator/nix.yml" = {
+  home.file."${tmuxinator-config}/nix.yml" = {
     text = ''
       # /home/dylan/.config/tmuxinator/nix.yml
 

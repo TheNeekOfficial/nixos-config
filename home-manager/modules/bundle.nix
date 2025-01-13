@@ -5,5 +5,6 @@
     ./packages/bundle-packages.nix
     ./nightlight.nix
     ./direnv.nix
+    ./gen/gendle.nix
   ];
 }

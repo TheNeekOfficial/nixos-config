@@ -73,6 +73,7 @@
             home-manager.users.dylan = {
               imports = [
                 ./home-manager/home.nix
+                ./home-manager/modules/bundle.nix
                 ./home-manager/modules/wm/i3/bund-i3.nix
               ];
             };

@@ -1,9 +1,8 @@
-{ self, pkgs, ... }:
-let
-  lock-time = 150; # 2.5min
+{pkgs, ...}: let
+  dim-time = 90; # 1.5min
+  lock-time = 300; # 5min
   shutdown-time = 600; # 10min
-in
-{
+in {
   home.packages = with pkgs; [
     hypridle
     hyprlock
@@ -11,7 +10,7 @@ in
     # Enables loginctl
     elogind
 
-    # NOTE: Already installed in hyprland.nix but still 
+    # NOTE: Already installed in hyprland.nix but still
     # Enables brightnessctl
     brightnessctl
 
@@ -22,7 +21,6 @@ in
   services.hypridle = {
     enable = true;
     settings = {
-
       general = {
         lock_cmd = "playerctl -a pause & pidof hyprlock || hyprlock";
         ignore_dbus_inhibit = false;
@@ -33,10 +31,9 @@ in
       # NOTE: All whilst being idle
       # All times defined above
       listener = [
-
-        # Dims monitor on timeout-seconds
+        # Dims monitor on dim-time seconds
         {
-          timeout = 60;
+          timeout = dim-time;
           on-timeout = "brightnessctl -s set 5";
           on-resume = "brightnessctl -r";
         }
