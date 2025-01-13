@@ -117,6 +117,7 @@
             home-manager.users.dylan = {
               imports = [
                 ./home-manager/home.nix
+		./home-manager/modules/bundle.nix
                 ./home-manager/modules/wm/hyprland/bunland.nix
               ];
             };
@@ -163,6 +164,7 @@
             home-manager.users.dylan = {
               imports = [
                 ./home-manager/home.nix
+		./home-manager/modules/bundle.nix
                 ./home-manager/modules/wm/hyprland/bunland.nix
               ];
             };

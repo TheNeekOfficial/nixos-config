@@ -42,17 +42,50 @@ in {
       name: nix
       root: ~/nix/nixos-config/
 
-      # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
       startup_window: editor
 
       windows:
         - editor:
-            # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-            # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-            # synchronize: after
             panes:
               - nvim
         - nh:
+          panes:
+            - bash
+    '';
+  };
+
+  home.file."${tmuxinator-config}/dotfiles.yml" = {
+    text = ''
+      # /home/dylan/dotfiles/
+
+      name: dotfiles
+      root: ~/dotfiles/
+
+      startup_window: editor
+
+      windows:
+        - editor:
+            panes:
+              - nvim
+        - bash:
+          panes:
+            - bash
+    '';
+  };
+  home.file."${tmuxinator-config}/coding.yml" = {
+    text = ''
+      # /home/dylan/coding/
+
+      name: coding
+      root: ~/coding
+
+      startup_window: editor
+
+      windows:
+        - editor:
+            panes:
+              - nvim
+        - bash:
           panes:
             - bash
     '';
