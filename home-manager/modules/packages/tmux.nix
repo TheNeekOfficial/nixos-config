@@ -8,6 +8,7 @@
     keyMode = "vi";
     # Remaps prefix from 'C-b' to 'C-a'
     prefix = "C-a";
+    tmuxinator.enable = true;
 
     # adds specific tmux plugins
     # NOTE: if using set -ag make sure the -g for the same option is above it
@@ -26,12 +27,14 @@
       #     set -g status-left ""
       #
       #     # Sets statuses to catppuccin specific ones
-      #     # set -g status-right "#{E:@catppuccin_status_application}"
-      #     # set -agF status-right "#{E:@catppuccin_status_cpu}"
-      #     # set -ag status-right "#{E:@catppuccin_status_session}"
-      #     # set -ag status-right "#{E:@catppuccin_status_uptime}"
-      #     # set -agF status-right "#{E:@catppuccin_status_battery}"
-      #     '';
+      #     set -g status-right "#{E:@catppuccin_status_application}"
+      #     set -agF status-right "#{E:@catppuccin_status_cpu}"
+      #     run-shell ${pkgs.tmuxPlugins.cpu}/share/tmux-plugins/cpu/cpu.tmux
+      #     set -ag status-right "#{E:@catppuccin_status_session}"
+      #     set -ag status-right "#{E:@catppuccin_status_uptime}"
+      #     set -agF status-right "#{E:@catppuccin_status_battery}"
+      #     run-shell ${pkgs.tmuxPlugins.battery}/share/tmux-plugins/cpu/cou.tmux
+      #   '';
       # }
 
       # NOTE: For Catppuccin | Couldnt get to work
@@ -63,6 +66,7 @@
       # }
 
       {
+        # TODO: Add to nvim setup
         plugin = vim-tmux-navigator;
       }
 
@@ -126,6 +130,60 @@
       # set -og window-status-format "#I:#W#F"
       # set -og window-status-current-format "#I:#W#F"
       # set -og window-status-separator "|"
+    '';
+  };
+
+  # NOTE: Sets mux alias for tmuxinator
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      mux = "tmuxinator";
+    };
+  };
+
+  home.file."config/tmuxinator/gen.yml" = {
+    text = ''
+      # /home/dylan/.config/tmuxinator/gen.yml
+
+      name: gen
+      root: ~/
+
+      # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+      startup_window: editor
+
+      windows:
+        - editor:
+            # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+            # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+            # synchronize: after
+            panes:
+              - nvim
+        - bash:
+          panes:
+            - bash
+    '';
+  };
+
+  home.file."config/tmuxinator/nix.yml" = {
+    text = ''
+      # /home/dylan/.config/tmuxinator/nix.yml
+
+      name: nix
+      root: ~/nix/nixos-config/
+
+      # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+      startup_window: editor
+
+      windows:
+        - editor:
+            # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+            # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+            # synchronize: after
+            panes:
+              - nvim
+        - nh:
+          panes:
+            - bash
     '';
   };
 }
