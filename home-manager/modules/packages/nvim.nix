@@ -37,7 +37,7 @@ in {
       alejandra
 
       # Lua
-      # stylua
+      stylua
     ];
   };
 
@@ -45,4 +45,6 @@ in {
     recursive = true;
     source = my-nvim;
   };
+
+  programs.bash.shellAliases = {dotfiles = "nix flake update dotfiles";};
 }

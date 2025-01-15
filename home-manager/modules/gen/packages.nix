@@ -17,6 +17,7 @@
     eza
     git
     bat
+    tldr # less overwhleming man pages
 
     # Terminal help tools
     brightnessctl # Brightness tool for terminall

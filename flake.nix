@@ -34,6 +34,7 @@
   };
 
   outputs = inputs @ {
+    self,
     nixpkgs,
     home-manager,
     nixpkgs-stable,
@@ -117,7 +118,7 @@
             home-manager.users.dylan = {
               imports = [
                 ./home-manager/home.nix
-		./home-manager/modules/bundle.nix
+                ./home-manager/modules/bundle.nix
                 ./home-manager/modules/wm/hyprland/bunland.nix
               ];
             };
@@ -164,7 +165,7 @@
             home-manager.users.dylan = {
               imports = [
                 ./home-manager/home.nix
-		./home-manager/modules/bundle.nix
+                ./home-manager/modules/bundle.nix
                 ./home-manager/modules/wm/hyprland/bunland.nix
               ];
             };
@@ -186,6 +187,36 @@
       #      ./home-manager/modules/dooit.nix
       #    ];
       # };
+    };
+
+    # NOTE: Setting up seperate home-manager setup so dont need to use sudo to test new home files
+    # TODO:
+    homeConfigurations = let
+      system = "x86_64-linux";
+    in {
+      "dylan" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          inherit system;
+          config = {
+            allowUnfree = true;
+          };
+        };
+        extraSpecialArgs = {
+          inherit inputs;
+          inherit wallpapers;
+          inherit (self) outputs;
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+        modules = [
+          ./home-manager/home.nix
+          ./home-manager/modules/gen/stylix.nix
+          ./home-manager/modules/bundle.nix
+          ./home-manager/modules/wm/hyprland/bunland.nix
+        ];
+      };
     };
   };
 }

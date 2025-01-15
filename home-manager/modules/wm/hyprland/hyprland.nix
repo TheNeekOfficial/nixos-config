@@ -31,7 +31,6 @@
     swappy
     wl-clipboard
   ];
-
   # WM
   # Hyprland
 
@@ -152,6 +151,9 @@
         # Spotify Volume Control
         "SHIFT, XF86AudioLowerVolume, exec, playerctl -p spotify volume 0.1-"
         "SHIFT, XF86AudioRaiseVolume, exec, playerctl -p spotify volume 0.1+"
+        # Youtube/Browser Volume Control
+        "CTRL, XF86AudioLowerVolume, exec, playerctl -p firefox volume 0.1-"
+        "CTRL, XF86AudioRaiseVolume, exec, playerclt -p firefox volume 0.1+"
 
         # Brightness Control
         ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
@@ -170,10 +172,12 @@
       ];
 
       # Rules for windows inc. opacity and where to put them etc.
+      # NOTE: WINDOW RULES ^
       windowrulev2 = [
-        "opacity 0.9, class:kitty"
+        "opacity 0.9 0.4, class:kitty"
 
         # Sets Picture in Picture to top right and pinned to all screens
+        "opacity 1.0 1.0 override, title:(Picture-in-Picture)" # active vs inactive
         "float, title:(Picture-in-Picture)"
         "size 30% 30%, title:(Picture-in-Picture)"
         "move 1005 31, title:(Picture-in-Picture)"
@@ -196,8 +200,23 @@
         "workspace 10, class:spotify"
       ];
 
+      # NOTE: allows horizontal and vertical setup
       dwindle = {
         preserve_split = true;
+      };
+
+      # NOTE: DECORATIONS
+      decoration = {
+        # Sets windows to have a rounding radius of n-px
+        rounding = 5;
+
+        # Opacities
+        active_opacity = 0.9;
+        inactive_opacity = 0.6;
+        fullscreen_opacity = 1.0;
+
+        # dim_inactive = true;
+        # dim_strength = 0.3;
       };
     };
 

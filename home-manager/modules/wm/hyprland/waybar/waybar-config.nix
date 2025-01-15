@@ -1,14 +1,9 @@
-{self, config, ...}: 
-
-{
+{...}: {
   programs.waybar = {
-
     enable = true;
 
     settings = {
-
       mainBar = {
-
         # Puts waybar on top of apps that are under it
         layer = "top";
 
@@ -27,23 +22,23 @@
         # Sets the modules shown on left of taskbar
         modules-left = [
           "hyprland/workspaces"
-	        "custom/right-arrow-dark"
-        ];
-
-# Same but centre
-        modules-center = [
-          "custom/left-arrow-dark"
-	        "clock#1"
-          "custom/left-arrow-light"
-	        "custom/left-arrow-dark"
-	        "clock#2"
-	        "custom/right-arrow-dark"
-          "custom/right-arrow-light"
-	        "clock#3"
           "custom/right-arrow-dark"
         ];
 
-# Same but right
+        # Same but centre
+        modules-center = [
+          "custom/left-arrow-dark"
+          "clock#1"
+          "custom/left-arrow-light"
+          "custom/left-arrow-dark"
+          "clock#2"
+          "custom/right-arrow-dark"
+          "custom/right-arrow-light"
+          "clock#3"
+          "custom/right-arrow-dark"
+        ];
+
+        # Same but right
         modules-right = [
           "custom/left-arrow-dark"
           "pulseaudio"
@@ -67,41 +62,41 @@
         "custom/left-arrow-dark" = {
           format = "";
           tooltip = false;
-	      };
+        };
 
         "custom/left-arrow-light" = {
           format = "";
           tooltip = false;
-	      };
+        };
 
         "custom/right-arrow-dark" = {
           format = "";
           tooltip = false;
-	      };
-	      "custom/right-arrow-light" = {
+        };
+        "custom/right-arrow-light" = {
           format = "";
           tooltip = false;
-	      };
+        };
 
-	      "hyprland/workspaces" = {
+        "hyprland/workspaces" = {
           disable-scroll = true;
           format = "{name}";
-	      };
+        };
 
-	      "clock#1" = {
+        "clock#1" = {
           format = "{:%a}";
           tooltip = false;
-	      };
-	      "clock#2" = {
+        };
+        "clock#2" = {
           format = "{:%H:%M}";
           tooltip = false;
-	      };
-	      "clock#3" = {
+        };
+        "clock#3" = {
           format = "{:%d-%m}";
           tooltip = false;
-	      };
+        };
 
-	      "pulseaudio" = {
+        "pulseaudio" = {
           format = "{icon}  {volume:2}%";
           format-bluetooth = "{icon}  {volume}%";
           format-muted = "MUTE";
@@ -115,16 +110,16 @@
           scroll-step = 5;
           on-click = "pamixer -t";
           on-click-right = "pavucontrol";
-	      };
-	      "memory" = {
+        };
+        "memory" = {
           interval = 5;
           format = "Mem {}%";
-	      };
-	      "cpu" = {
+        };
+        "cpu" = {
           interval = 5;
           format = "CPU {usage:2}%";
-	      };
-	      "battery" = {
+        };
+        "battery" = {
           states = {
             good = 95;
             warning = 30;
@@ -138,15 +133,15 @@
             ""
             ""
           ];
-	      };
-	      "disk" = {
+        };
+        "disk" = {
           interval = 5;
           format = "Disk {percentage_used:2}%";
           path = "/";
-	      };
-	      "tray" = {
+        };
+        "tray" = {
           icon-size = 20;
-	      };
+        };
       };
     };
   };
