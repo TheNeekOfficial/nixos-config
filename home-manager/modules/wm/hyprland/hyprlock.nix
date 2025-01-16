@@ -1,8 +1,10 @@
-{ self, pkgs, wallpapers, lib, ... }:
-let 
-  wallpaper = "${wallpapers.wallpapers.path}/river-valley.png";
-in
 {
+  inputs,
+  lib,
+  ...
+}: let
+  wallpaper = "${inputs.wallpapers.wallpapers.path}/river-valley.png";
+in {
   programs.hyprlock = {
     enable = true;
 

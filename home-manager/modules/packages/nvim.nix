@@ -29,7 +29,7 @@ in {
       python312Packages.python-lsp-server
 
       # Lua
-      # lua53Packages.lua-lsp # NOTE: Couldn't get working w/ lspconfig
+      luajitPackages.lua-lsp # NOTE: Couldn't get working w/ lspconfig
 
       # NOTE: Formatters
 
