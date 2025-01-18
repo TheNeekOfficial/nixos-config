@@ -27,6 +27,10 @@
     # Stylix for easy app customisation
     stylix.url = "github:danth/stylix";
 
+    hypr-binds-flake = {
+      url = "github:gvolpe/hypr-binds";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # ToDo list terminal
     # TODO get working
     #dooit.url = "github:dooit-org/dooit";
@@ -130,6 +134,7 @@
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
+          inherit system;
           pkgs-stable = import nixpkgs-stable {
             inherit system;
             config.allowUnfree = true;
@@ -156,7 +161,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {inherit inputs wallpapers;};
+            home-manager.extraSpecialArgs = {inherit inputs system wallpapers;};
             home-manager.backupFileExtension = "hm-backup";
 
             # NOTE: Disables vesktop as using Freesia's css
@@ -203,8 +208,8 @@
         };
         extraSpecialArgs = {
           inherit inputs;
+          inherit system;
           inherit wallpapers;
-          inherit (self) outputs;
           pkgs-stable = import nixpkgs-stable {
             inherit system;
             config.allowUnfree = true;

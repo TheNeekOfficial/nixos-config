@@ -20,6 +20,7 @@
     waybar
     hyprpaper
     waypaper
+    liferea
 
     # Lock Screen
     hyprlock # Works once in hyprland but not on boot
@@ -51,6 +52,7 @@
         "sleep 1 && waybar"
         "wofi"
         "hyprpaper"
+        "waypaper --restore"
         # NOTE: Don't include hypridle as activated w/ ./hypridle.nix OTHERWISE IT WILL BREAK SYSTEM
         "kitty"
       ];
@@ -63,10 +65,10 @@
         "$mod SHIFT, Return, exec, alacritty"
         "$mod, SPACE, exec, wofi --show run"
         "$mod, E, exec, dolphin"
-        "$mod ALT, E, exec, systemsettings"
         "$mod, D, exec, vesktop"
         "$mod ALT, W, exec, waypaper" # GUI wallpaper manager
         "$mod, S, exec, spotify && sleep 2 && playerctl -p spotify play"
+        "$mod, R, exec, liferea" # RSS Reader
 
         # Window control
         "$mod, q, killactive"
@@ -129,6 +131,10 @@
         "$mod CTRL, j, exec, playerctl previous" # Means skip to previous song
         # More under binde
 
+        # NOTE: keybind show -- My version -- Not good
+        # "$mod, k, exec, echo | hyprctl binds | grep -e 'bind' -e 'modmask' -e 'key:' -e 'arg' | sed 's/modmask: 64/Super/' | sed 's/modmask: 65/Super + Shift/' | sed 's/modmask: 72/Super + Alt/' | sed 's/modmask: 68/Super + CTRL/' | sed 's/modmask: 0/None/' | sed 's/modmask: 1/Shift/' | sed 's/modmask: 8/Alt/' | sed 's/modmask: 9/Alt + Shift/' | sed 's/modmask: 4/CTRL/' | wofi --dmenu"
+        "$mod, k, exec, hypr-binds"
+
         # Exit Hypr
         "$mod, M, exit"
 
@@ -156,8 +162,8 @@
         "CTRL, XF86AudioRaiseVolume, exec, playerclt -p firefox volume 0.1+"
 
         # Brightness Control
-        ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
-        ", XF86MonBrightnessUp, exec, brightnessctl s 10%+"
+        ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
+        ", XF86MonBrightnessUp, exec, brightnessctl s 5%+"
       ];
 
       # NOTE: bindm = mouse binds
@@ -174,27 +180,31 @@
       # Rules for windows inc. opacity and where to put them etc.
       # NOTE: WINDOW RULES ^
       windowrulev2 = [
-        "opacity 0.9 0.4, class:kitty"
+        "opacity 0.9 0.4, class:kitty" # active, inactive
 
         # Sets Picture in Picture to top right and pinned to all screens
-        "opacity 1.0 1.0 override, title:(Picture-in-Picture)" # active vs inactive
+        "opacity 1.0 0.80 override, title:(Picture-in-Picture)" # active vs inactive
         "float, title:(Picture-in-Picture)"
-        "size 30% 30%, title:(Picture-in-Picture)"
-        "move 1005 31, title:(Picture-in-Picture)"
+        "size 341 197, title:(Picture-in-Picture)"
+        "move 1097 31, title:(Picture-in-Picture)"
         "pin, title:(Picture-in-Picture)"
         "noinitialfocus, title:(Picture-in-Picture)"
-
-        # Sets steam to desktop 9
-        "workspace 9, title:Steam"
+        "xray on, title:(Picture-in-Picture)"
 
         # Sets kitty to workspace 1
         "workspace 1, class:kitty"
 
+        # Sets firefox to desktop 2
+        "workspace 2, class:firefox"
+
+        # Sets RSS Reader to desktop 3
+        "workspace 3, title:Liferea"
+
         # Sets discord to desktop 8
         "workspace 8, class:vesktop"
 
-        # Sets firefox to desktop 2
-        "workspace 2, class:firefox"
+        # Sets steam to desktop 9
+        "workspace 9, title:Steam"
 
         # Sets spotify to desktop 10
         "workspace 10, class:spotify"

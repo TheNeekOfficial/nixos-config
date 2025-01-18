@@ -27,6 +27,12 @@
     btop # replaces htop/nmon
     obsidian
 
+    # RSS
+    liferea
+    libsecret # Necessary for liferea
+    seahorse # GUI for gnome-keyring
+    gnome-keyring # Necessary for libsecret
+
     # Chats
     vesktop
 

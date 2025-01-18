@@ -6,5 +6,6 @@
     ./hyprland.nix
     ./hyprlock.nix
     ./hypridle.nix
+    ./hyprbinds.nix
   ];
 }

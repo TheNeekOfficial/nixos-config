@@ -1,6 +1,6 @@
 {inputs, ...}: let
   nix-wallpaper = "${inputs.wallpapers.wallpapers.path}/nixos-wallpaper-catppuccin-mocha.png";
-  cloudy-wallpaper = "${inputs.wallpapers.wallpapers.path}/anime-cloudy.png";
+  japan-wallpaper = "${inputs.wallpapers.wallpapers.path}/japan-fuji.png";
   beach-wallpaper = "${inputs.wallpapers.wallpapers.path}/anime-beach.jpeg";
 in {
   services.hyprpaper = {
@@ -14,13 +14,13 @@ in {
       # Loads the wallpapers
       preload = [
         nix-wallpaper
-        cloudy-wallpaper
+        japan-wallpaper
         beach-wallpaper
       ];
 
       # Sets the wallpapers
       wallpaper = [
-        ", ${beach-wallpaper}"
+        ", ${japan-wallpaper}"
       ];
     };
   };
