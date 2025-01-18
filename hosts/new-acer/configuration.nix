@@ -6,8 +6,8 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    # Includes window boot
-    ./windows-boot.nix
+    # BIOS Settings re-set up
+    ./bios-settings-fix.nix
 
     # Modifications done for this host
     ./intel-gpu.nix
