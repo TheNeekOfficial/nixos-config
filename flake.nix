@@ -133,8 +133,7 @@
       new-lapnix = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         specialArgs = {
-          inherit inputs;
-          inherit system;
+          inherit inputs system;
           pkgs-stable = import nixpkgs-stable {
             inherit system;
             config.allowUnfree = true;
@@ -172,6 +171,7 @@
                 ./home-manager/home.nix
                 ./home-manager/modules/bundle.nix
                 ./home-manager/modules/wm/hyprland/bunland.nix
+                ./home-manager/modules/gen/batt-signal.nix
               ];
             };
           }
@@ -207,9 +207,7 @@
           };
         };
         extraSpecialArgs = {
-          inherit inputs;
-          inherit system;
-          inherit wallpapers;
+          inherit inputs system wallpapers;
           pkgs-stable = import nixpkgs-stable {
             inherit system;
             config.allowUnfree = true;
@@ -220,6 +218,7 @@
           ./home-manager/modules/gen/stylix.nix
           ./home-manager/modules/bundle.nix
           ./home-manager/modules/wm/hyprland/bunland.nix
+          ./home-manager/modules/gen/batt-signal.nix
         ];
       };
     };
