@@ -5,5 +5,7 @@
     vvvvvv
     nbsdgames
     nudoku
+    freesweep # TUI Minesweeper
+    libremines # GUI minesweeper
   ];
 }

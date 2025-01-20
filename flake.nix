@@ -27,10 +27,12 @@
     # Stylix for easy app customisation
     stylix.url = "github:danth/stylix";
 
+    # For easily seeing hyprland keybinds
     hypr-binds-flake = {
       url = "github:gvolpe/hypr-binds";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     # ToDo list terminal
     # TODO get working
     #dooit.url = "github:dooit-org/dooit";

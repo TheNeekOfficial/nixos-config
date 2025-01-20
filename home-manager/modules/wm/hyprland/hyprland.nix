@@ -69,6 +69,7 @@
         "$mod ALT, W, exec, waypaper" # GUI wallpaper manager
         "$mod, S, exec, spotify && sleep 2 && playerctl -p spotify play"
         "$mod, R, exec, liferea" # RSS Reader
+        "$mod, G, exec, libremines" # Minesweeper
 
         # Window control
         "$mod, q, killactive"

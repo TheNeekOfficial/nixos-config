@@ -36,9 +36,6 @@
     # Chats
     vesktop
 
-    # KDE
-    kdePackages.kdeconnect-kde
-
     # For laptop
     # https://nixos.wiki/wiki/Laptop
 
