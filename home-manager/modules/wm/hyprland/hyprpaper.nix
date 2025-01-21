@@ -1,7 +1,11 @@
 {inputs, ...}: let
-  nix-wallpaper = "${inputs.wallpapers.wallpapers.path}/nixos-wallpaper-catppuccin-mocha.png";
-  japan-wallpaper = "${inputs.wallpapers.wallpapers.path}/japan-fuji.png";
-  beach-wallpaper = "${inputs.wallpapers.wallpapers.path}/anime-beach.jpeg";
+  wallpaper = inputs.wallpapers.wallpapers.path;
+  nix = "${wallpaper}/nixos-wallpaper-catppuccin-mocha.png";
+  japan = "${wallpaper}/japan-fuji.png";
+  beach = "${wallpaper}/anime-beach.jpeg";
+  # NOTE: Waifus
+  marin = "${wallpaper}/marin-school-4k.jpg";
+  hori = "${wallpaper}/horimiya-hori-4k.png";
 in {
   services.hyprpaper = {
     enable = true;
@@ -13,14 +17,16 @@ in {
 
       # Loads the wallpapers
       preload = [
-        nix-wallpaper
-        japan-wallpaper
-        beach-wallpaper
+        # nix
+        # japan
+        # beach
+        # marin
+        hori
       ];
 
       # Sets the wallpapers
       wallpaper = [
-        ", ${japan-wallpaper}"
+        ", ${hori}"
       ];
     };
   };

@@ -190,6 +190,7 @@
         "move 1097 31, title:(Picture-in-Picture)"
         "pin, title:(Picture-in-Picture)"
         "noinitialfocus, title:(Picture-in-Picture)"
+        "noblur on, title:(Picture-in-Picture)"
         "xray on, title:(Picture-in-Picture)"
 
         # Sets kitty to workspace 1

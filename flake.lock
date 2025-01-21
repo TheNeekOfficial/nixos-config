@@ -491,11 +491,11 @@
     },
     "wallpapers": {
       "locked": {
-        "lastModified": 1736325534,
-        "narHash": "sha256-YjClFGPx2X3GlBp3EHbq8KU3r/yC9S4LUIJHVNZg+fc=",
+        "lastModified": 1737417931,
+        "narHash": "sha256-NeYeAp18vNrRMs1FAYcoCYwcBoE76Xlk14l7KIe4rL4=",
         "owner": "TheNeekOfficial",
         "repo": "wallpapers",
-        "rev": "747c78aa9b71e69e196b7e23688ef18a29e267f6",
+        "rev": "b49e69f7b22bc1c612e931c5fa56d446317b0cd5",
         "type": "github"
       },
       "original": {
