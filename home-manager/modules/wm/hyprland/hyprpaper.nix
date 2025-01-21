@@ -17,10 +17,10 @@ in {
 
       # Loads the wallpapers
       preload = [
-        # nix
-        # japan
-        # beach
-        # marin
+        nix
+        japan
+        beach
+        marin
         hori
       ];
 

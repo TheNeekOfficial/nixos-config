@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  wallpaper = "${inputs.wallpapers.wallpapers.path}/river-valley.png";
+  wallpaper = "${inputs.wallpapers.wallpapers.path}/japan-fuji.jpg";
 in {
   programs.hyprlock = {
     enable = true;
