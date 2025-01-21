@@ -1,5 +1,8 @@
-{ self, pkgs, inputs, ... }:
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     catppuccin-sddm
     (pkgs.catppuccin-sddm.override {
@@ -12,7 +15,7 @@
     catppuccin-sddm-corners
   ];
 
-  services.displayManager.sddm = { 
+  services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
     theme = "catppuccin-mocha";

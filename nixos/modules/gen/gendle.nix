@@ -1,5 +1,4 @@
-{self, pkgs, ... }:
-{
+{...}: {
   imports = [
     ./autogc.nix
     ./genlimit.nix
@@ -9,6 +8,6 @@
     ./nerdfont.nix
     ./bluetooth.nix
     ./flake-nix.nix
-    ./sddm.nix
+    ./sddm/sddmle.nix
   ];
 }

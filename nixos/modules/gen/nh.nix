@@ -1,5 +1,4 @@
-{ self, pkgs, ... }:
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     nh
     nix-output-monitor
