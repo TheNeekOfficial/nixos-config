@@ -90,4 +90,24 @@ in {
             - bash
     '';
   };
+
+  home.file."${tmuxinator-config}/notes.yml" = {
+    text = ''
+      # /home/dylan/.config/tmuxinator/gen.yml
+
+      name: notes
+      root: ~/class-notes/
+
+      # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+      startup_window: note-taker
+
+      windows:
+        - note-taker:
+            # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+            # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+            # synchronize: after
+            panes:
+              - nvim
+    '';
+  };
 }

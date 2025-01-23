@@ -4,5 +4,6 @@
     libreoffice
     onlyoffice-desktopeditors
     lazygit
+    nix-tour
   ];
 }
