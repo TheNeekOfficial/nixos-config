@@ -9,5 +9,6 @@
     ./bluetooth.nix
     ./flake-nix.nix
     ./sddm/sddmle.nix
+    ./canon-printer.nix
   ];
 }

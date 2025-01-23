@@ -63,7 +63,7 @@
         "$mod, W, exec, firefox"
         "$mod, Return, exec, kitty"
         "$mod SHIFT, Return, exec, alacritty"
-        "$mod, SPACE, exec, wofi --show run"
+        "$mod, SPACE, exec, wofi --show drun"
         "$mod, E, exec, dolphin"
         "$mod, D, exec, vesktop"
         "$mod ALT, W, exec, waypaper" # GUI wallpaper manager
@@ -192,6 +192,9 @@
         "noinitialfocus, title:(Picture-in-Picture)"
         "noblur on, title:(Picture-in-Picture)"
         "xray on, title:(Picture-in-Picture)"
+
+        # Sets youtube opacity to 1
+        "opacity 1.0 override 0.9 override, title:(.*)(- YouTube)(.*)"
 
         # Sets kitty to workspace 1
         "workspace 1, class:kitty"
