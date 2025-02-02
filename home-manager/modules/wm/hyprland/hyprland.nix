@@ -21,6 +21,7 @@
     hyprpaper
     waypaper
     liferea
+    spotify-player
 
     # Lock Screen
     hyprlock # Works once in hyprland but not on boot
@@ -68,6 +69,7 @@
         "$mod, D, exec, vesktop"
         "$mod ALT, W, exec, waypaper" # GUI wallpaper manager
         "$mod, S, exec, spotify && sleep 2 && playerctl -p spotify play"
+        "$mod ALT, S, exec, kitty --title spotify_player spotify_player" # TUI spotify --title spotify_player
         "$mod, R, exec, liferea" # RSS Reader
         "$mod, G, exec, libremines" # Minesweeper
 
@@ -126,7 +128,7 @@
 
         # Video/Music playback control
         "$mod, p, exec, playerctl play-pause"
-        "$mod ALT, p, exec, playerctl -p spotify play-pause" # specifically target spotify w/ alt
+        "$mod ALT, p, exec, playerctl -p spotify -p spotify_player play-pause" # specifically target spotify w/ alt
         "$mod CTRL, p, exec, playerctl -a pause"
         "$mod CTRL, k, exec, playerctl next" # Means skip to next song
         "$mod CTRL, j, exec, playerctl previous" # Means skip to previous song
@@ -197,13 +199,16 @@
         "opacity 1.0 override 0.9 override, title:(.*)(- YouTube)(.*)"
 
         # Sets kitty to workspace 1
-        "workspace 1, class:kitty"
+        "workspace 1, title:kitty"
 
         # Sets firefox to desktop 2
         "workspace 2, class:firefox"
 
         # Sets RSS Reader to desktop 3
         "workspace 3, title:Liferea"
+
+        # Sets Class-Notes in Obsidian to desktop 4
+        "workspace 4, title:(class-notes)(.*)(Obsidian)(.*)"
 
         # Sets discord to desktop 8
         "workspace 8, class:vesktop"
@@ -213,6 +218,7 @@
 
         # Sets spotify to desktop 10
         "workspace 10, class:spotify"
+        "workspace 10, title:spotify_player"
       ];
 
       # NOTE: allows horizontal and vertical setup

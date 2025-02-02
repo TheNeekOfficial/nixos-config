@@ -10,5 +10,6 @@
     ./flake-nix.nix
     ./sddm/sddmle.nix
     ./canon-printer.nix
+    ./spotify-connect.nix
   ];
 }

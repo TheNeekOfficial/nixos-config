@@ -33,9 +33,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Supposedly better nix lang
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # nix-snapd = {
+    #   url = "github:nix-community/nix-snapd";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
     # ToDo list terminal
     # TODO get working
-    #dooit.url = "github:dooit-org/dooit";
+    #dooit.url = "";
     #dooit-extras.url = "github:dooit-org/dooit-extras";
   };
 
@@ -156,6 +167,9 @@
 
           # Import swappiness control to limit how much my system swaps
           ./nixos/modules/swappiness-control.nix
+
+          # Different fork version of Nix language
+          # inputs.lix-module.nixosModules.default
 
           # Imports home-manager
           home-manager.nixosModules.home-manager
