@@ -5,5 +5,6 @@
     ./hyprlock.nix
     ./gnome-keyring.nix
     ./gammastep.nix
+    ./hyprpanel.nix
   ];
 }

@@ -1,5 +1,4 @@
-{ self, ... }:
-{
+{...}: {
   imports = [
     ./tlp.nix
   ];

@@ -17,7 +17,6 @@
 
     #Apps
     wofi
-    waybar
     hyprpaper
     waypaper
     liferea
@@ -46,11 +45,9 @@
 
       # Exec on startup
       exec-once = [
-        "nm-applet --indicator & disown"
-        "blueman-applet"
         "gammastep-indicator"
-        "dunst"
-        "sleep 1 && waybar"
+        # "dunst"
+        # "sleep 1 && waybar"
         "wofi"
         "hyprpaper"
         "waypaper --restore"
@@ -158,8 +155,8 @@
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         # Spotify Volume Control
-        "SHIFT, XF86AudioLowerVolume, exec, playerctl -p spotify volume 0.1-"
-        "SHIFT, XF86AudioRaiseVolume, exec, playerctl -p spotify volume 0.1+"
+        "SHIFT, XF86AudioLowerVolume, exec, playerctl -p spotify -p spotify_player volume 0.1-"
+        "SHIFT, XF86AudioRaiseVolume, exec, playerctl -p spotify -p spotify_player volume 0.1+"
         # Youtube/Browser Volume Control
         "CTRL, XF86AudioLowerVolume, exec, playerctl -p firefox volume 0.1-"
         "CTRL, XF86AudioRaiseVolume, exec, playerclt -p firefox volume 0.1+"
