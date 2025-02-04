@@ -7,14 +7,6 @@
     mesa
     wlroots
 
-    #Network
-    networkmanagerapplet
-    blueman
-
-    #gnome-keyring
-    # Notifications
-    dunst
-
     #Apps
     wofi
     hyprpaper
@@ -46,8 +38,6 @@
       # Exec on startup
       exec-once = [
         "gammastep-indicator"
-        # "dunst"
-        # "sleep 1 && waybar"
         "wofi"
         "hyprpaper"
         "waypaper --restore"
@@ -119,9 +109,6 @@
         # also togglesplit as an option but idk what it does
         "$mod, t, pseudo" # Makes screen smaller typa style
         "$mod, c, togglesplit"
-
-        # Waybar open/close
-        "$mod, B, exec, pkill -SIGUSR1 waybar"
 
         # Video/Music playback control
         "$mod, p, exec, playerctl play-pause"

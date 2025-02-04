@@ -3,6 +3,5 @@
   imports = [
     inputs.hyprpanel.homeManagerModules.hyprpanel
     ./hyprpanel.nix
-    ./setup.nix
   ];
 }
