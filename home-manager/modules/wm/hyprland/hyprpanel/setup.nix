@@ -9,7 +9,7 @@
 
     bind = [
       # Waybar open/close
-      "$mod, B, exec, pkill -SIGUSR1 hyprpanel"
+      "$mod, B, exec, hyprpanel toggleWindow bar-0"
     ];
   };
 }

@@ -1,7 +1,7 @@
 {...}: {
   programs.hyprpanel = {
     enable = true;
-    # hyprland.enable = true; # NOTE: Adds to exec-once for hyprland config
+    hyprland.enable = true; # NOTE: Adds to exec-once for hyprland config
     # theme = "catppuccin-mocha"; # NOTE: Not working RN
     overwrite.enable = true;
 
@@ -24,6 +24,7 @@
           # NOTE: Either numbered or icons not both
           show_numbered = true;
           show_icons = false;
+          spacing = 0.2;
         };
         battery = {
           label = true;
@@ -32,7 +33,7 @@
         clock = {
           # format = "%a %b %d  %H:%M:%S";
           # format = "%H:%M:%S";
-          format = "%H:%M";
+          format = "%x  %H:%M";
           showIcon = true;
           showTime = true;
         };
@@ -52,6 +53,8 @@
           showWifiInfo = false;
         };
         windowtitle = {
+          class_name = false;
+          custom_title = true;
           icon = true;
           label = true;
           truncation = true;

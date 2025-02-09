@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.tmux = {
     enable = true;
 
@@ -69,14 +73,14 @@
         plugin = vim-tmux-navigator;
       }
 
-      {
-        plugin = resurrect;
-        extraConfig = ''
-          set -g @resurrect-strategy-vim 'session'
-          set -g @resurrect-strategy-nvim 'session'
-          set -g @resurrect-capture-pane-contents 'on'
-        '';
-      }
+      # {
+      #   plugin = inputs.nixpkgs-stable.tmuxPlugins.resurrect;
+      #   extraConfig = ''
+      #     set -g @resurrect-strategy-vim 'session'
+      #     set -g @resurrect-strategy-nvim 'session'
+      #     set -g @resurrect-capture-pane-contents 'on'
+      #   '';
+      # }
       {
         plugin = continuum;
         extraConfig = ''

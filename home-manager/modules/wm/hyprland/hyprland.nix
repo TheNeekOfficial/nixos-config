@@ -59,6 +59,7 @@
         "$mod ALT, S, exec, kitty --title spotify_player spotify_player" # TUI spotify --title spotify_player
         "$mod, R, exec, liferea" # RSS Reader
         "$mod, G, exec, libremines" # Minesweeper
+        "$mod, V, exec, vieb" # Vimium browser
 
         # Window control
         "$mod, q, killactive"
@@ -194,6 +195,9 @@
         # Sets Class-Notes in Obsidian to desktop 4
         "workspace 4, title:(class-notes)(.*)(Obsidian)(.*)"
 
+        # Sets vieb to desktop 4
+        "workspace 4, class:Vieb"
+
         # Sets discord to desktop 8
         "workspace 8, class:vesktop"
 
@@ -222,6 +226,12 @@
 
         # dim_inactive = true;
         # dim_strength = 0.3;
+      };
+
+      general = {
+        # Get windows closer to bar
+        gaps_in = 2;
+        gaps_out = 8;
       };
     };
 
