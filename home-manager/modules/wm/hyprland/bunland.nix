@@ -1,4 +1,8 @@
 {
+  lib,
+  config,
+  ...
+}: {
   imports = [
     ./kitty.nix
     # ./waybar/waybundle.nix

@@ -178,25 +178,25 @@
           # inputs.lix-module.nixosModules.default
 
           # Imports home-manager
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {inherit inputs system wallpapers;};
-            home-manager.backupFileExtension = "hm-backup";
-
-            # NOTE: Disables vesktop as using Freesia's css
-            # home-manager.sharedModules = [{ stylix.targets.vesktop.enable = false; }];
-
-            home-manager.users.dylan = {
-              imports = [
-                ./home-manager/home.nix
-                ./home-manager/modules/bundle.nix
-                ./home-manager/modules/wm/hyprland/bunland.nix
-                ./home-manager/modules/gen/batt-signal.nix
-              ];
-            };
-          }
+          # home-manager.nixosModules.home-manager
+          # {
+          #   home-manager.useGlobalPkgs = true;
+          #   home-manager.useUserPackages = true;
+          #   home-manager.extraSpecialArgs = {inherit inputs system wallpapers;};
+          #   home-manager.backupFileExtension = "hm-backup";
+          #
+          #   # NOTE: Disables vesktop as using Freesia's css
+          #   # home-manager.sharedModules = [{ stylix.targets.vesktop.enable = false; }];
+          #
+          #   home-manager.users.dylan = {
+          #     imports = [
+          #       ./home-manager/home.nix
+          #       ./home-manager/modules/bundle.nix
+          #       ./home-manager/modules/wm/hyprland/bunland.nix
+          #       ./home-manager/modules/gen/batt-signal.nix
+          #     ];
+          #   };
+          # }
         ];
       };
 
@@ -241,6 +241,7 @@
           ./home-manager/modules/bundle.nix
           ./home-manager/modules/wm/hyprland/bunland.nix
           ./home-manager/modules/gen/batt-signal.nix
+          ./home-manager/customModules/wm/hyprland/test.nix
         ];
       };
     };

@@ -42,7 +42,7 @@
         "hyprpaper"
         "waypaper --restore"
         # NOTE: Don't include hypridle as activated w/ ./hypridle.nix OTHERWISE IT WILL BREAK SYSTEM
-        "kitty"
+        "[workspace 1 silent] kitty"
       ];
 
       # Sets keybindings for things
@@ -184,7 +184,7 @@
         "opacity 1.0 override 0.9 override, title:(.*)(- YouTube)(.*)"
 
         # Sets kitty to workspace 1
-        "workspace 1, title:kitty"
+        # "workspace 1, title:kitty"
 
         # Sets firefox to desktop 2
         "workspace 2, class:firefox"
