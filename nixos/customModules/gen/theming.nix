@@ -32,13 +32,13 @@ in {
             defaultText = literalExpression "dark";
             description = "Which polarity wants to be used";
           };
-          disabledModules = mkOption {
-            type = types.submodule {
-              options = {
-                kde.enable = mkEnableOption "Have stylix theme kde";
-              };
-            };
-          };
+          # disabledModules = mkOption {
+          #   type = types.submodule {
+          #     options = {
+          #       kde.enable = mkEnableOption "Have stylix theme kde";
+          #     };
+          #   };
+          # };
         };
       };
     };
@@ -57,9 +57,6 @@ in {
           image = "${wallpaper}/${cfg.wallpaper}";
           polarity = cfg.stylix.polarity;
           base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.stylix.colorScheme}.yaml";
-          targets = {
-            kde.enable = cfg.stylix.disabledModules.kde.enable;
-          };
         };
       })
     ];

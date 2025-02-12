@@ -1,14 +1,6 @@
-{
-  inputs,
-  lib,
-  ...
-}: let
-  wallpaper = "${inputs.wallpapers.wallpapers.path}/japan-fuji.jpg";
-in {
+{...}: {
   programs.hyprlock = {
-    enable = true;
-
-    settings = lib.mkForce {
+    settings = {
       general = {
         disable_loading_bar = true;
         # grace = 30; # Sets 30s timer to where cna get back in w/o password NOTE: Means also applies after turned back on w/ hypridle
@@ -17,7 +9,6 @@ in {
 
       background = [
         {
-          path = wallpaper;
           blur_passes = 3;
           blur_size = 8;
         }

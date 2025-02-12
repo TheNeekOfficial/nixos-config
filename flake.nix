@@ -241,7 +241,6 @@
           ./home-manager/modules/bundle.nix
           ./home-manager/modules/wm/hyprland/bunland.nix
           ./home-manager/modules/gen/batt-signal.nix
-          ./home-manager/customModules/wm/hyprland/test.nix
         ];
       };
     };
