@@ -36,6 +36,7 @@ in {
             type = types.submodule {
               options = {
                 kde.enable = mkEnableOption "Have stylix theme kde";
+                hyprlock.enable = mkEnableOption "Have stylix theme hyprlock";
               };
             };
           };
@@ -48,8 +49,6 @@ in {
     mkMerge
     [
       (mkIf cfg.stylix.enable {
-        # NOTE: Change from nixosModules for HM setup
-        # imports = [inputs.stylix.${cfg.stylix.module}.stylix];
         stylix = let
           wallpaper = inputs.wallpapers.wallpapers.path;
         in {
@@ -59,6 +58,7 @@ in {
           base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.stylix.colorScheme}.yaml";
           targets = {
             kde.enable = cfg.stylix.disabledModules.kde.enable;
+            hyprlock.enable = cfg.stylix.disabledModules.hyprlock.enable;
           };
         };
       })

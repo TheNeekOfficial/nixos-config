@@ -239,7 +239,7 @@
           ./home-manager/home.nix
           ./home-manager/modules/gen/stylix.nix
           ./home-manager/modules/bundle.nix
-          ./home-manager/modules/wm/hyprland/bunland.nix
+          ./home-manager/modules/wm/wm-bundle.nix
           ./home-manager/modules/gen/batt-signal.nix
         ];
       };

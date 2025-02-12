@@ -22,11 +22,35 @@ in {
       type = types.submodule {
         options = {
           enable = mkEnableOption "Enable Hyprlock";
-          wallpaper = mkOption {
-            type = types.str;
-            default = wpDefault;
-            defaultText = "Theming wallpaper";
-            description = "Wallpaper for hyprlock, same rules as theming";
+          background = mkOption {
+            type = types.submodule {
+              options = {
+                wallpaper = mkOption {
+                  type = types.str;
+                  default = wpDefault;
+                  defaultText = "Theming wallpaper";
+                  description = "Wallpaper for hyprlock, same rules as theming";
+                };
+                blurPasses = mkOption {
+                  type = types.int;
+                  default = 3;
+                  defaultText = "3";
+                  description = "how many passes do you want the blue to go through";
+                };
+                blurSize = mkOption {
+                  type = types.int;
+                  default = 8;
+                  defaultText = "8";
+                  description = "How big do you want each blur that passes be?";
+                };
+                force = mkOption {
+                  type = types.bool;
+                  default = false;
+                  defaultText = "false";
+                  description = "Force entries to go through?";
+                };
+              };
+            };
           };
         };
       };
@@ -83,16 +107,22 @@ in {
   };
   config = let
     wpPath = inputs.wallpapers.wallpapers.path;
+    hyprlockSetup = [
+      {
+        path = "${wpPath}/${cfg.hyprlock.background.wallpaper}";
+        blur_passes = cfg.hyprlock.background.blurPasses;
+        blur_size = cfg.hyprlock.background.blurSize;
+      }
+    ];
   in
     mkIf cfg.enable {
       wayland.windowManager.hyprland.enable = cfg.enable;
       programs.hyprlock = mkIf cfg.hyprlock.enable {
         enable = cfg.hyprlock.enable;
-        settings.background = [
-          {
-            path = "${wpPath}/${cfg.hyprlock.wallpaper}";
-          }
-        ];
+        settings.background =
+          if cfg.hyprlock.background.force
+          then mkForce hyprlockSetup
+          else mkDefault hyprlockSetup;
       };
       services.hyprpaper = mkIf cfg.hyprpaper.enable {
         enable = cfg.hyprpaper.enable;

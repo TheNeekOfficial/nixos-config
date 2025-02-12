@@ -5,7 +5,7 @@
   ];
   services.theming = {
     enable = true;
-    wallpaper = "horimiya-hori-4k.jpg";
+    wallpaper = "horimiya-hori-4k.png";
     stylix = {
       enable = true;
       colorScheme = "catppuccin-mocha";
