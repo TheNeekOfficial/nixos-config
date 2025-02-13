@@ -59,6 +59,7 @@
         "$mod, R, exec, liferea" # RSS Reader
         "$mod, G, exec, libremines" # Minesweeper
         "$mod, V, exec, vieb" # Vimium browser
+        "$mod SHIFT, V, exec, qutebrowser" # Another Vimium browser
 
         # Window control
         "$mod, q, killactive"
@@ -168,6 +169,8 @@
       # NOTE: WINDOW RULES ^
       windowrulev2 = [
         "opacity 0.9 0.4, class:kitty" # active, inactive
+        # "opacity 1.0 override class:kitty" # For SS's for school
+        # "opacity 1.0 override, class:firefox" # For SS's for school
 
         # Sets Picture in Picture to top right and pinned to all screens
         "opacity 1.0 0.80 override, title:(Picture-in-Picture)" # active vs inactive
@@ -196,6 +199,7 @@
 
         # Sets vieb to desktop 4
         "workspace 4, class:Vieb"
+        "workspace 4, class:(.*)qutebrowser(.*)"
 
         # Sets discord to desktop 8
         "workspace 8, class:vesktop"

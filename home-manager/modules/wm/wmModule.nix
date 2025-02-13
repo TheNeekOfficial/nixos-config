@@ -26,11 +26,5 @@
       };
     };
   };
-  services.theming = {
-    stylix = {
-      disabledModules = {
-        hyprlock.enable = false;
-      };
-    };
-  };
+  services.theming.stylix.disabledModules.hyprlock.enable = false;
 }
