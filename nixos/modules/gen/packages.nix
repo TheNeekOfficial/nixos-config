@@ -13,6 +13,5 @@
     # Git/Development
     git
     pkgs-stable.gh
-    devenv
   ];
 }
