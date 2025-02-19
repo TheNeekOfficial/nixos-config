@@ -13,9 +13,9 @@
   services.theming = {
     enable = true;
     wallpaper = "anime-fan.jpg";
+    colorScheme = "rose-pine-moon";
     stylix = {
       enable = true;
-      colorScheme = "rose-pine-moon";
       polarity = "dark";
       disabledModules = {
         kde.enable = false;

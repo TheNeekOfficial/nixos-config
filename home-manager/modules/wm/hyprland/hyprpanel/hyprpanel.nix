@@ -1,8 +1,10 @@
 {...}: {
+  # stylix.targets.hyprpanel.enable = false;
   programs.hyprpanel = {
     enable = true;
     hyprland.enable = true; # NOTE: Adds to exec-once for hyprland config
-    # theme = "catppuccin-mocha"; # NOTE: Not working RN
+    # theme = "catppuccin_mocha";
+    theme = "rose_pine_moon";
     overwrite.enable = true;
 
     # NOTE: Layout
