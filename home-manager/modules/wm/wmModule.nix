@@ -1,4 +1,4 @@
-{lib, ...}: {
+{...}: {
   imports = [../../customModules/wm/hyprland/hyprland.nix];
   services.wm.hyprland = {
     enable = true;
@@ -24,6 +24,13 @@
           # Before sleep command
         };
       };
+    };
+    hyprpanel = {
+      enable = true;
+      # TODO: Fix so default works
+      theme = "rose_pine_moon";
+      execOnce = true;
+      overwritePanelFile = true;
     };
   };
   services.theming.stylix.disabledModules.hyprlock.enable = false;

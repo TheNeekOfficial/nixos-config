@@ -104,6 +104,41 @@ in {
         };
       };
     };
+
+    # TODO: setup waybar and hyprpanel options
+    # Set theme to hyprpanel same as system
+    # might need to change `-` to `_` w/ lib.replaceString or similar
+
+    # waybar = mkOption {
+    #   type = types.submodule {
+    #     enable = mkEnableOption "Enable waybar?";
+    #   };
+    # };
+    hyprpanel = mkOption {
+      type = types.submodule {
+        options = {
+          enable = mkOption {
+            type = types.bool;
+            default = true;
+            defaultText = "Sets Hyprpanel to true";
+            description = "Enable Hyprland?";
+          };
+          theme = mkOption {
+            type = types.str;
+            default = replaceStrings ["-" "_"] (builtins.toString config.services.theming.colorScheme);
+            defaultText = "Default theme";
+            description = "Color Theme for hyprpanel";
+          };
+          execOnce = mkEnableOption "Add to exec-once in hyprland";
+          overwritePanelFile = mkOption {
+            type = types.bool;
+            default = true;
+            defaultText = "true";
+            description = "Overwrites hyprpanel file so dont need to do -b on home switch";
+          };
+        };
+      };
+    };
   };
   config = let
     wpPath = inputs.wallpapers.wallpapers.path;
@@ -145,6 +180,12 @@ in {
             before_sleep_command = hypridleSettingsGeneral.beforeSleepCmd;
           };
         };
+      };
+      programs.hyprpanel = mkIf cfg.hyprpanel.enable {
+        enable = cfg.hyprpanel.enable;
+        theme = cfg.hyprpanel.theme;
+        hyprland.enable = cfg.hyprpanel.execOnce;
+        overwrite.enable = cfg.hyprpanel.overwritePanelFile;
       };
     };
 }
