@@ -114,6 +114,8 @@ in {
     #     enable = mkEnableOption "Enable waybar?";
     #   };
     # };
+
+    # TODO: Setup custom theme options w/ override option in Hyprpanel HM module
     hyprpanel = mkOption {
       type = types.submodule {
         options = {
@@ -125,7 +127,7 @@ in {
           };
           theme = mkOption {
             type = types.str;
-            default = replaceStrings ["-" "_"] (builtins.toString config.services.theming.colorScheme);
+            default = replaceStrings ["-"] ["_"] (builtins.toString config.services.theming.colorScheme);
             defaultText = "Default theme";
             description = "Color Theme for hyprpanel";
           };
@@ -149,6 +151,8 @@ in {
         blur_size = cfg.hyprlock.background.blurSize;
       }
     ];
+    customThemes = ["monokai"];
+    themeCheck = elem "${cfg.hyprpanel.theme}" customThemes;
   in
     mkIf cfg.enable {
       wayland.windowManager.hyprland.enable = cfg.enable;
@@ -183,9 +187,19 @@ in {
       };
       programs.hyprpanel = mkIf cfg.hyprpanel.enable {
         enable = cfg.hyprpanel.enable;
-        theme = cfg.hyprpanel.theme;
         hyprland.enable = cfg.hyprpanel.execOnce;
         overwrite.enable = cfg.hyprpanel.overwritePanelFile;
+
+        # NOTE: To check if theme is not in a custom themes list
+        # (mkIf !elem "${cfg.hyprpanel.theme}" ["custom" "themes" "here"])
+        # NOTE: if cfg.hyprpanel.theme needed to be a list (for custom themes eg.)
+        # lib.any (x: lib.elem x [ "y" "z" ]) [ "x" ]
+        theme = mkIf !themeCheck cfg.hyprpanel.theme;
+        override = mkIf themeCheck {
+          (mkIf cfg.hyprpanel.theme == "monokai" {
+            # NOTE: Example: theme.bar.menus.text = "#123ABC";
+          });
+        };
       };
     };
 }

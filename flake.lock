@@ -113,11 +113,11 @@
     },
     "dotfiles": {
       "locked": {
-        "lastModified": 1739956488,
-        "narHash": "sha256-yIF293N4SAyaeQpCFfrG/4LbSvvIEOGebV91169NGdI=",
+        "lastModified": 1740350444,
+        "narHash": "sha256-yWYSd4ZGQh3+0DBf2kDn8f5gYO/XlOG2oXJ4UQTrHA8=",
         "owner": "TheNeekOfficial",
         "repo": "dotfiles",
-        "rev": "a36cb39ec1db6958c47e8d8fde7bcc268918a82c",
+        "rev": "f8a7e22470653084051a90898637b2542e4842fe",
         "type": "github"
       },
       "original": {

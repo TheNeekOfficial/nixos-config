@@ -27,8 +27,7 @@
     };
     hyprpanel = {
       enable = true;
-      # TODO: Fix so default works
-      theme = "rose_pine_moon";
+      # theme = "rose_pine_moon";
       execOnce = true;
       overwritePanelFile = true;
     };

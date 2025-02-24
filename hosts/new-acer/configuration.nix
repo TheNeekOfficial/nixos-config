@@ -12,7 +12,7 @@
     # Modifications done for this host
     ./intel-gpu.nix
     ./kernel-update.nix
-    ./ollama-ai.nix
+    # ./ollama-ai.nix
     # NOTE: Added snapd and tried to install intel-npu-drivers; didn't work and thus my system now still has snapd stuff, reinstall if want to get rid of
     # ./npu-driver.nix # NOTE: Still couldnt get to work :(
     # ./fingerprint.nix # NOTE: Doesn't work
