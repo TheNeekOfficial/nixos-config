@@ -8,5 +8,6 @@
     ./vesktop.nix
     ./cursor.nix
     ./ms-teams.nix
+    ./bitwarden.nix
   ];
 }

@@ -4,10 +4,10 @@
     pkgs.fetchFromGitHub {
       owner = "freesiagaul";
       repo = "monokai-pro-betterdiscord";
-      rev = "5da5b385d1d6947f90ed86e9827e6a1b51292d28"; # If updated update this too
-      sha256 = "vuPrwVc3zlwGy/PpdKyy/qp+ntv1qmCVhzKjs4FhiGE="; # If updated get hash w/ lib.fakeSha256a;
+      rev = "fb4c83348e4578e8ee9e1334b5b335b11f62a7e6"; # If updated update this too
+      sha256 = "JUpOCSxJaq4CHCnyAYhsBNsNiz3OxYCerhS7b78/3w4="; # If updated get hash w/ lib.fakeSha256a;
     }
-    + "/monokai_theme.css";
+    + "/monokai.theme.css";
 in {
   home.packages = with pkgs; [
     vesktop
