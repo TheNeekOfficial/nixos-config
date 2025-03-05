@@ -193,12 +193,14 @@ in {
         # NOTE: To check if theme is not in a custom themes list
         # (mkIf !elem "${cfg.hyprpanel.theme}" ["custom" "themes" "here"])
         # NOTE: if cfg.hyprpanel.theme needed to be a list (for custom themes eg.)
-        # lib.any (x: lib.elem x [ "y" "z" ]) [ "x" ]
-        theme = mkIf !themeCheck cfg.hyprpanel.theme;
-        override = mkIf themeCheck {
-          (mkIf cfg.hyprpanel.theme == "monokai" {
-            # NOTE: Example: theme.bar.menus.text = "#123ABC";
-          });
+        # lb.any (x: lb.elem x [ "y" "z" ]) [ "x" ]
+        theme = mkIf (!themeCheck) cfg.hyprpanel.theme;
+        override = mkIf (themeCheck && (cfg.hyprpanel.theme == "monokai")) {
+          #   # NOTE: Example: theme.bar.menus.text = "#123ABC";
+          # theme.bar.menus.text = "#d6d6d6";
+          theme.bar.menus.text = "#ffd866";
+          theme.bar.buttons.workspaces.numbered_active_highlighted_text_color = "#d6d6d6";
+          # TODO: Override in menu colour options
         };
       };
     };

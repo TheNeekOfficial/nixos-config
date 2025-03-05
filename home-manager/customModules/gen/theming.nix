@@ -27,20 +27,20 @@ in {
         options = {
           enable = mkEnableOption "Use Stylix for theming";
           # TODO: Need to get working
-          colorModules = mkOption {
-            type = types.submodule {
-              enable = mkEnableOption "Enable Color Modules to easily swap around between preset colorschemes?";
-              catppucinMocha.enable = mkOption {
-                type = types.bool;
-                default = true;
-                defaultText = literalExpression "Enables catppucin-mocha colorscheme by default";
-                description = "Enable catppuccin-mocha colorscheme?";
-              };
-              rose-pine-moon.enable = mkEnableOption "Enable rose-pine-moon colorscheme?";
-              mocha.enable = mkEnableOption "Enable mocha colorscheme?";
-              uwunicorn.enable = mkEnableOption "Enable uwunicorn colorscheme?";
-            };
-          };
+          # colorModules = mkOption {
+          #   type = types.submodule {
+          #     enable = mkEnableOption "Enable Color Modules to easily swap around between preset colorschemes?";
+          #     catppucinMocha.enable = mkOption {
+          #       type = types.bool;
+          #       default = true;
+          #       defaultText = literalExpression "Enables catppucin-mocha colorscheme by default";
+          #       description = "Enable catppuccin-mocha colorscheme?";
+          #     };
+          #     rose-pine-moon.enable = mkEnableOption "Enable rose-pine-moon colorscheme?";
+          #     mocha.enable = mkEnableOption "Enable mocha colorscheme?";
+          #     uwunicorn.enable = mkEnableOption "Enable uwunicorn colorscheme?";
+          #   };
+          # };
           polarity = mkOption {
             type = types.str;
             default = "dark";
@@ -67,7 +67,7 @@ in {
         stylix = {
           enable = cfg.stylix.enable;
           image = "${inputs.wallpapers.wallpapers.path}/${cfg.wallpaper}";
-          polarity = cfg.stylix.polarity;
+          polarity = "${cfg.stylix.polarity}";
           base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.colorScheme}.yaml";
           targets = {
             kde.enable = cfg.stylix.disabledModules.kde.enable;

@@ -57,9 +57,14 @@
         "$mod, S, exec, spotify && sleep 2 && playerctl -p spotify play"
         "$mod ALT, S, exec, kitty --title spotify_player spotify_player" # TUI spotify --title spotify_player
         "$mod, R, exec, liferea" # RSS Reader
-        "$mod, G, exec, libremines" # Minesweeper
         "$mod, V, exec, vieb" # Vimium browser
-        "$mod SHIFT, V, exec, qutebrowser" # Another Vimium browser
+        "$mod SHIFT, V, exec, nyxt" # Another Vimium browser
+        "$mod, t, exec, todoist-electron" # TodoList
+        "$mod SHIFT, t, exec, io.github.alainm23.planify" # TodoList
+
+        # Games
+        "$mod, G, exec, kitty --title TUISweeper freesweep" # Minesweeper
+        "$mod SHIFT, G, exec, libremines" # Minesweeper
 
         # Window control
         "$mod, q, killactive"
@@ -108,7 +113,7 @@
 
         # Dwindle Window layout options
         # also togglesplit as an option but idk what it does
-        "$mod, t, pseudo" # Makes screen smaller typa style
+        "$mod, m, pseudo" # Makes screen smaller typa style
         "$mod, c, togglesplit"
 
         # Video/Music playback control
@@ -121,10 +126,10 @@
 
         # NOTE: keybind show -- My version -- Not good
         # "$mod, k, exec, echo | hyprctl binds | grep -e 'bind' -e 'modmask' -e 'key:' -e 'arg' | sed 's/modmask: 64/Super/' | sed 's/modmask: 65/Super + Shift/' | sed 's/modmask: 72/Super + Alt/' | sed 's/modmask: 68/Super + CTRL/' | sed 's/modmask: 0/None/' | sed 's/modmask: 1/Shift/' | sed 's/modmask: 8/Alt/' | sed 's/modmask: 9/Alt + Shift/' | sed 's/modmask: 4/CTRL/' | wofi --dmenu"
-        "$mod, k, exec, hypr-binds"
+        "$mod ALT, k, exec, hypr-binds"
 
         # Exit Hypr
-        "$mod, M, exit"
+        "$mod SHIFT ALT, M, exit"
 
         # NOTE: FN keys
 
@@ -199,7 +204,11 @@
 
         # Sets vieb to desktop 4
         "workspace 4, class:Vieb"
-        "workspace 4, class:(.*)qutebrowser(.*)"
+        "workspace 4, class:(.*)nyxt(.*)"
+
+        # Sets todolist to desktop 7
+        "workspace 7, title:Planify"
+        "workspace 7, class:Todoist"
 
         # Sets discord to desktop 8
         "workspace 8, class:vesktop"

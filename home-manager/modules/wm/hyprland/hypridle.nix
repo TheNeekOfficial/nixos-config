@@ -1,7 +1,7 @@
 {pkgs, ...}: let
-  dim-time = 90; # 1.5min
-  lock-time = 300; # 5min
-  shutdown-time = 600; # 10m
+  dim-time = 120; # 1.5min
+  lock-time = 450; # 5min
+  shutdown-time = 900; # 10m
 
   # NOTE: For lock-time
   notify-time = 60; # 1 min

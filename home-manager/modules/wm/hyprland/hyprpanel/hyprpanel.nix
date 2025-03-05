@@ -18,6 +18,19 @@
       };
     };
 
+    # TODO: Set this for different apps to change names and etc.
+    override = let
+      theme = theme.bar;
+      themeMenu = theme.bar.menus.menu;
+      bgColor = "#d6d6d6";
+      textColor = "#ffd866";
+      accentTextColor = "#78dce8";
+    in {
+      # theme.bar.menus.text = "#d6d6d6";
+      # theme.bar.buttons.workspaces.numbered_active_highlighted_text_color = "#d6d6d6";
+      # theme.bar.buttons.workspaces.
+    };
+
     settings = {
       # NOTE: Bar
       bar = {
@@ -41,6 +54,7 @@
         };
         bluetooth = {
           label = true;
+          # TODO: Do truncation for Connected display
         };
         media = {
           show_active_only = true;

@@ -28,6 +28,7 @@
     hyprpanel = {
       enable = true;
       # theme = "rose_pine_moon";
+      theme = "monokai";
       execOnce = true;
       overwritePanelFile = true;
     };
