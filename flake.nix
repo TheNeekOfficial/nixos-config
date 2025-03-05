@@ -27,6 +27,11 @@
     # Stylix for easy app customisation
     stylix.url = "github:danth/stylix";
 
+    # Another way to rice Nix easily
+    # nix-rice = { url = "github:bertof/nix-rice"; };
+    # TODO: use to create an overlay for it to then apply to other programs
+    # Find seperate one thats more updated
+
     # For easily seeing hyprland keybinds
     hypr-binds-flake = {
       url = "github:gvolpe/hypr-binds";
@@ -237,9 +242,9 @@
         };
         modules = [
           ./home-manager/home.nix
-          ./home-manager/modules/gen/stylix.nix
           ./home-manager/modules/bundle.nix
           ./home-manager/modules/wm/wm-bundle.nix
+          # NOTE: Change for each host basis
           ./home-manager/modules/gen/batt-signal.nix
         ];
       };

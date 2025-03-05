@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     vieb
     neovide
-    qutebrowser
+    nyxt
   ];
   # home.file.".config/Vieb/viebrc" = [
   #   text = ...

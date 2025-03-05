@@ -1,7 +1,7 @@
 {inputs, ...}: {
   imports = [
-    ../../customModules/gen/theming.nix
     inputs.stylix.homeManagerModules.stylix
+    ../../customModules/gen/theming.nix
   ];
   # TODO: Set a module change for all of these easily
 
