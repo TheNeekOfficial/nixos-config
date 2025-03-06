@@ -12,5 +12,6 @@
     # ./canon-printer.nix
     ./spotify-connect.nix
     ./quickboot.nix
+    ./usbrec.nix
   ];
 }
