@@ -47,18 +47,20 @@
       # Sets keybindings for things
       bind = [
         # apps
-        "$mod, W, exec, firefox"
+        "$mod, W, exec, zen"
+        "$mod SHIFT, W, exec, firefox"
         "$mod, Return, exec, kitty"
         "$mod SHIFT, Return, exec, alacritty"
         "$mod, SPACE, exec, wofi --show drun"
-        "$mod, E, exec, dolphin"
+        "$mod SHIFT, E, exec, dolphin"
+        "$mod, E, exec, kitty --title yazi yazi"
         "$mod, D, exec, vesktop"
         "$mod ALT, W, exec, waypaper" # GUI wallpaper manager
         "$mod, S, exec, spotify && sleep 2 && playerctl -p spotify play"
         "$mod ALT, S, exec, kitty --title spotify_player spotify_player" # TUI spotify --title spotify_player
         "$mod, R, exec, liferea" # RSS Reader
         "$mod, V, exec, vieb" # Vimium browser
-        "$mod SHIFT, V, exec, nyxt" # Another Vimium browser
+        "$mod SHIFT, V, exec, qutebrowser" # Another Vimium browser
         "$mod, t, exec, todoist-electron" # TodoList
         "$mod SHIFT, t, exec, io.github.alainm23.planify" # TodoList
 
@@ -157,6 +159,8 @@
         # Brightness Control
         ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
         ", XF86MonBrightnessUp, exec, brightnessctl s 5%+"
+        "SHIFT, XF86MonBrightnessDown, exec, brightnessctl s 1%-"
+        "SHIFT, XF86MonBrightnessUp, exec, brightnessctl s 1%+"
       ];
 
       # NOTE: bindm = mouse binds
@@ -195,6 +199,7 @@
 
         # Sets firefox to desktop 2
         "workspace 2, class:firefox"
+        "workspace 2, class:zen(.*)"
 
         # Sets RSS Reader to desktop 3
         "workspace 3, title:Liferea"
@@ -205,6 +210,7 @@
         # Sets vieb to desktop 4
         "workspace 4, class:Vieb"
         "workspace 4, class:(.*)nyxt(.*)"
+        "workspace 4, class:(.*)qutebrowser(.*)"
 
         # Sets todolist to desktop 7
         "workspace 7, title:Planify"

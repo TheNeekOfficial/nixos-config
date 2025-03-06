@@ -4,7 +4,7 @@
     ./git.nix
     ./packages.nix
     ./kdeconnect.nix
-    ./vieb.nix
+    ./browser.nix
     ./xmpp.nix
     ./theming.nix
   ];

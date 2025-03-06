@@ -55,10 +55,7 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    # ToDo list terminal
-    # TODO get working
-    #dooit.url = "";
-    #dooit-extras.url = "github:dooit-org/dooit-extras";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs = inputs @ {
