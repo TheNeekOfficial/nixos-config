@@ -194,12 +194,33 @@ in {
         # (mkIf !elem "${cfg.hyprpanel.theme}" ["custom" "themes" "here"])
         # NOTE: if cfg.hyprpanel.theme needed to be a list (for custom themes eg.)
         # lb.any (x: lb.elem x [ "y" "z" ]) [ "x" ]
-        theme = mkIf (!themeCheck) cfg.hyprpanel.theme;
+        theme =
+          if (!themeCheck)
+          then cfg.hyprpanel.theme
+          else "";
         override = mkIf (themeCheck && (cfg.hyprpanel.theme == "monokai")) {
-          #   # NOTE: Example: theme.bar.menus.text = "#123ABC";
+          # NOTE: Colours
+          # #78dce8 Light Blue
+          # #d6d6d6 Off White
+          # #ffd866 Golden
+          # #b05279 Dark Magenta
+          # #ff6188 Bright Magenta - Most liked so far
+          # #eb1348 Bright Magenta
+          # #f36d8e
+          # #b50f37 Dark Red
+
           # theme.bar.menus.text = "#d6d6d6";
-          theme.bar.menus.text = "#ffd866";
-          theme.bar.buttons.workspaces.numbered_active_highlighted_text_color = "#d6d6d6";
+          theme.bar.menus.text = "#f36d8e";
+
+          # NOTE: Doesnt do as expected
+          # theme.bar.buttons.workspaces.numbered_active_highlighted_text_color = "#fcfcfa";
+
+          # TODO: Change to different colour but works as expected
+          theme.bar.buttons.workspaces.numbered_active_underline_color = "#78dce8";
+          theme.bar.buttons.workspaces.hover = "#78dce8";
+          theme.bar.buttons.workspaces.active = "#78dce8";
+          theme.bar.buttons.workspaces.occupied = "#ff6188";
+          theme.bar.buttons.workspaces.available = "#d6d6d6";
           # TODO: Override in menu colour options
         };
       };
