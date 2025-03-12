@@ -221,6 +221,15 @@ in {
           theme.bar.buttons.workspaces.active = "#78dce8";
           theme.bar.buttons.workspaces.occupied = "#ff6188";
           theme.bar.buttons.workspaces.available = "#d6d6d6";
+          # NOTE: Name of devices
+          # theme.bar.menus.menu.volume.text = "#ff6188";
+          # theme.bar.menus.menu.volume.label.color = "#ff6188";
+
+          # NOTE: actual control menu
+          # theme.bar.menus.menu.dashboard.controls.volume.text = "#ff6188";
+          # TODO: Change to a slightly less bright red
+          theme.bar.buttons.volume.text = "#ff6188";
+          theme.bar.buttons.volume.icon = "#ff6188";
           # TODO: Override in menu colour options
         };
       };

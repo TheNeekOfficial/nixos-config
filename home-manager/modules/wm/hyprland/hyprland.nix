@@ -53,7 +53,7 @@
         "$mod SHIFT, Return, exec, alacritty"
         "$mod, SPACE, exec, wofi --show drun"
         "$mod SHIFT, E, exec, dolphin"
-        "$mod, E, exec, kitty --title yazi yazi"
+        "$mod, E, exec, kitty --title yazi yazi" # Term file browser
         "$mod, D, exec, vesktop"
         "$mod ALT, W, exec, waypaper" # GUI wallpaper manager
         "$mod, S, exec, spotify && sleep 2 && playerctl -p spotify play"
@@ -128,7 +128,7 @@
 
         # NOTE: keybind show -- My version -- Not good
         # "$mod, k, exec, echo | hyprctl binds | grep -e 'bind' -e 'modmask' -e 'key:' -e 'arg' | sed 's/modmask: 64/Super/' | sed 's/modmask: 65/Super + Shift/' | sed 's/modmask: 72/Super + Alt/' | sed 's/modmask: 68/Super + CTRL/' | sed 's/modmask: 0/None/' | sed 's/modmask: 1/Shift/' | sed 's/modmask: 8/Alt/' | sed 's/modmask: 9/Alt + Shift/' | sed 's/modmask: 4/CTRL/' | wofi --dmenu"
-        "$mod ALT, k, exec, hypr-binds"
+        "$mod, i, exec, hypr-binds"
 
         # Exit Hypr
         "$mod SHIFT ALT, M, exit"
@@ -141,6 +141,10 @@
         # Screenshots
         # TODO: Get setup w/ correct FN F12 setup
         "CTRL, F12, exec, grim -g \"$(slurp)\" - | swappy -f -"
+
+        # NOTE: For headphones
+        ", XF86AudioPlay, exec, playerctl play"
+        ", XF86AudioPause, exec, playerctl -a pause"
       ];
 
       # NOTE: binde = can repeat when held
@@ -149,9 +153,11 @@
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+
         # Spotify Volume Control
         "SHIFT, XF86AudioLowerVolume, exec, playerctl -p spotify -p spotify_player volume 0.1-"
         "SHIFT, XF86AudioRaiseVolume, exec, playerctl -p spotify -p spotify_player volume 0.1+"
+
         # Youtube/Browser Volume Control
         "CTRL, XF86AudioLowerVolume, exec, playerctl -p firefox volume 0.1-"
         "CTRL, XF86AudioRaiseVolume, exec, playerclt -p firefox volume 0.1+"

@@ -7,6 +7,7 @@
     ./browser.nix
     ./xmpp.nix
     ./theming.nix
+    ./betterBase.nix
   ];
   # Enables font config
   fonts.fontconfig.enable = true;
