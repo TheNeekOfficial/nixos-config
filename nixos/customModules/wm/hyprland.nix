@@ -7,16 +7,23 @@
 }:
 with lib; let
   cfg = config.services.wm.hyprland;
+  mkDefTrueEnableOption = desc:
+    mkOption {
+      type = types.bool;
+      default = true;
+      defaulText = "true";
+      description = "${desc}";
+    };
 in {
   options = {
     services.wm.hyprland = mkOption {
       type = types.submodule {
-        enable = mkEnableOption "Enable Hyprland?";
-        xwayland = mkEnableOption "Enable xwayland?";
-        withUWSM = mkEnableOption "Enable UWSM?";
+        enable = mkDefTrueEnableOption "Enable Hyprland?";
+        xwayland = mkDefTrueEnableOption "Enable xwayland?";
+        withUWSM = mkDefTrueEnableOption "Enable UWSM?";
         hyprlock = mkOption {
           type = types.submodule {
-            enable = mkEnableOption "Enable hyprlock?";
+            enable = mkDefTrueEnableOption "Enable hyprlock?";
             suspendThenHibernate = mkOption {
               type = types.submodule {
                 enable = mkEnableOption "Enable suspend then hibernate?";
@@ -31,11 +38,11 @@ in {
             };
           };
         };
-        gnomeKeyring = mkEnableOption "Enable gnome-keyring?";
-        gammaStepLocation = mkEnableOption "Enable Gammasteps location provider?";
+        gnomeKeyring = mkDefTrueEnableOption "Enable gnome-keyring?";
+        gammaStepLocation = mkDefTrueEnableOption "Enable Gammasteps location provider?";
         hyprpanel = mkOption {
           type = types.submodule {
-            enable = mkEnableOption "Enable hyprpanel?";
+            enable = mkDefTrueEnableOption "Enable hyprpanel?";
             batteryTrackerEnable = mkEnableOption "Enable battery tracker?";
             powerProfilesEnable = mkEnableOption "Enable power profiles?";
           };

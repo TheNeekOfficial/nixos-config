@@ -9,6 +9,13 @@ with lib; let
   cfg = config.services.wm.hyprland;
   wpDefault = config.services.theming.wallpaper;
   hypridleSettingsGeneral = cfg.hypridle.settings.general;
+  mkDefTrueEnableOption = desc:
+    mkOption {
+      type = types.bool;
+      default = true;
+      defaultText = "true";
+      description = "${desc}";
+    };
   # mkIfElse = p: yes: no:
   #   mkMerge [
   #     (mkIf p yes)
@@ -17,11 +24,11 @@ with lib; let
 in {
   imports = [../../gen/theming.nix];
   options.services.wm.hyprland = {
-    enable = mkEnableOption "Enable Hyprland";
+    enable = mkDefTrueEnableOption "Enable Hyprland";
     hyprlock = mkOption {
       type = types.submodule {
         options = {
-          enable = mkEnableOption "Enable Hyprlock";
+          enable = mkDefTrueEnableOption "Enable Hyprlock";
           background = mkOption {
             type = types.submodule {
               options = {
@@ -58,7 +65,7 @@ in {
     hyprpaper = mkOption {
       type = types.submodule {
         options = {
-          enable = mkEnableOption "Enable hyprpaper";
+          enable = mkDefTrueEnableOption "Enable hyprpaper";
           wallpaper = mkOption {
             type = types.str;
             default = wpDefault;
@@ -71,16 +78,16 @@ in {
     hypridle = mkOption {
       type = types.submodule {
         options = {
-          enable = mkEnableOption "Enable hypridle";
+          enable = mkDefTrueEnableOption "Enable hypridle";
           settings = mkOption {
             type = types.submodule {
               options = {
                 general = mkOption {
                   type = types.submodule {
                     options = {
-                      # hasPlayerCTL = mkEnableOption "Is playerctl installed?";
-                      # hasLoginCTL = mkEnableOption "Is loginctl installed?";
-                      ignore_dbus_inhibit = mkEnableOption "Ignore DBus inhibit?";
+                      # hasPlayerCTL = mkDefTrueEnableOption "Is playerctl installed?";
+                      # hasLoginCTL = mkDefTrueEnableOption "Is loginctl installed?";
+                      ignore_dbus_inhibit = mkDefTrueEnableOption "Ignore DBus inhibit?";
                       lockCmd = mkOption {
                         type = types.str;
                         # NOTE: Somehow check if hyprlock's enabled too
@@ -111,7 +118,7 @@ in {
 
     # waybar = mkOption {
     #   type = types.submodule {
-    #     enable = mkEnableOption "Enable waybar?";
+    #     enable = mkDefTrueEnableOption "Enable waybar?";
     #   };
     # };
 
@@ -131,7 +138,7 @@ in {
             defaultText = "Default theme";
             description = "Color Theme for hyprpanel";
           };
-          execOnce = mkEnableOption "Add to exec-once in hyprland";
+          execOnce = mkDefTrueEnableOption "Add to exec-once in hyprland";
           overwritePanelFile = mkOption {
             type = types.bool;
             default = true;
@@ -215,21 +222,20 @@ in {
           # NOTE: Doesnt do as expected
           # theme.bar.buttons.workspaces.numbered_active_highlighted_text_color = "#fcfcfa";
 
-          # TODO: Change to different colour but works as expected
+          # NOTE: Main colour is from Monokai Discord CSS
           theme.bar.buttons.workspaces.numbered_active_underline_color = "#78dce8";
-          theme.bar.buttons.workspaces.hover = "#78dce8";
+          theme.bar.buttons.workspaces.hover = "#ff6188";
           theme.bar.buttons.workspaces.active = "#78dce8";
-          theme.bar.buttons.workspaces.occupied = "#ff6188";
+          theme.bar.buttons.workspaces.occupied = "#e5b567";
           theme.bar.buttons.workspaces.available = "#d6d6d6";
           # NOTE: Name of devices
-          # theme.bar.menus.menu.volume.text = "#ff6188";
-          # theme.bar.menus.menu.volume.label.color = "#ff6188";
+          # theme.bar.menus.menu.volume.text = "#e5b567";
+          # theme.bar.menus.menu.volume.label.color = "#e5b567";
 
           # NOTE: actual control menu
-          # theme.bar.menus.menu.dashboard.controls.volume.text = "#ff6188";
-          # TODO: Change to a slightly less bright red
-          theme.bar.buttons.volume.text = "#ff6188";
-          theme.bar.buttons.volume.icon = "#ff6188";
+          # theme.bar.menus.menu.dashboard.controls.volume.text = "#e5b567";
+          theme.bar.buttons.volume.text = "#e5b567";
+          theme.bar.buttons.volume.icon = "#e5b567";
           # TODO: Override in menu colour options
         };
       };
