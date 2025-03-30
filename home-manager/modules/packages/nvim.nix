@@ -23,13 +23,12 @@ in {
 
       # Nix
       nixd
-      # rnix # NOTE: Not in nixpkgs
 
       # Python
       python312Packages.python-lsp-server
 
       # Lua
-      luajitPackages.lua-lsp # NOTE: Couldn't get working w/ lspconfig
+      lua-language-server # NOTE: Couldn't get working w/ lspconfig
 
       # NOTE: Formatters
 

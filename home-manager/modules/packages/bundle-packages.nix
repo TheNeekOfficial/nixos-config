@@ -7,7 +7,7 @@
     ./spotify.nix
     ./vesktop.nix
     ./cursor.nix
-    ./ms-teams.nix
+    # ./ms-teams.nix
     ./bitwarden.nix
     ./todolist.nix
     ./pomodoro.nix

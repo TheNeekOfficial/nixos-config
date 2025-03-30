@@ -56,8 +56,8 @@
         "$mod, E, exec, kitty --title yazi yazi" # Term file browser
         "$mod, D, exec, vesktop"
         "$mod ALT, W, exec, waypaper" # GUI wallpaper manager
-        "$mod, S, exec, spotify && sleep 2 && playerctl -p spotify play"
-        "$mod ALT, S, exec, kitty --title spotify_player spotify_player" # TUI spotify --title spotify_player
+        "ALT $mod, S, exec, spotify && sleep 2 && playerctl -p spotify play"
+        "$mod, S, exec, kitty --title spotify_player spotify_player" # TUI spotify --title spotify_player
         "$mod, R, exec, liferea" # RSS Reader
         "$mod, V, exec, vieb" # Vimium browser
         "$mod SHIFT, V, exec, qutebrowser" # Another Vimium browser
