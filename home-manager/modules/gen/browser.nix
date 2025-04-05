@@ -8,7 +8,7 @@
     vieb
     neovide
     qutebrowser
-    inputs.zen-browser.packages."${system}".twilight
+    inputs.zen-browser.packages."${system}".twilight-official
   ];
   programs.firefox = {
     enable = true;

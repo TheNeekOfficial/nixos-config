@@ -186,6 +186,7 @@
         "opacity 0.9 0.4, class:kitty" # active, inactive
         "opacity 1.0 override class:kitty" # For SS's for school
         "opacity 1.0 override, class:firefox" # For SS's for school
+        "opacity 1.0 override, class:(.*)zen(.*)"
 
         # Sets Picture in Picture to top right and pinned to all screens
         "opacity 1.0 0.80 override, title:(Picture-in-Picture)" # active vs inactive
