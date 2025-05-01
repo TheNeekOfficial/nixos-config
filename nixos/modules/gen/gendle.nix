@@ -13,5 +13,6 @@
     ./spotify-connect.nix
     ./quickboot.nix
     ./usbrec.nix
+    ./latestnix.nix
   ];
 }
