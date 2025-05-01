@@ -63,6 +63,7 @@
         "$mod SHIFT, V, exec, qutebrowser" # Another Vimium browser
         "$mod, t, exec, todoist-electron" # TodoList
         "$mod SHIFT, t, exec, io.github.alainm23.planify" # TodoList
+        "$mod, m, exec, plex-desktop" # Plex
 
         # Games
         "$mod, G, exec, kitty --title TUISweeper freesweep" # Minesweeper
@@ -115,8 +116,8 @@
 
         # Dwindle Window layout options
         # also togglesplit as an option but idk what it does
-        "$mod, m, pseudo" # Makes screen smaller typa style
-        "$mod, c, togglesplit"
+        # "$mod, m, pseudo" # Makes screen smaller typa style
+        # "$mod, c, togglesplit"
 
         # Video/Music playback control
         "$mod, p, exec, playerctl play-pause"
@@ -187,6 +188,8 @@
         "opacity 1.0 override class:kitty" # For SS's for school
         "opacity 1.0 override, class:firefox" # For SS's for school
         "opacity 1.0 override, class:(.*)zen(.*)"
+        "opacity 1.0 override, class:(.*)plex(.*)"
+        "opacity 1.0 override, class:(.*)krita(.*)"
 
         # Sets Picture in Picture to top right and pinned to all screens
         "opacity 1.0 0.80 override, title:(Picture-in-Picture)" # active vs inactive
@@ -210,6 +213,9 @@
 
         # Sets RSS Reader to desktop 3
         "workspace 3, title:Liferea"
+
+        # Sets plex to desktop 3
+        "workspace 3, title:Plex"
 
         # Sets Class-Notes in Obsidian to desktop 4
         "workspace 4, title:(class-notes)(.*)(Obsidian)(.*)"

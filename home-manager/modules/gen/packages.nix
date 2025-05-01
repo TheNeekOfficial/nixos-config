@@ -26,6 +26,11 @@
     # productivity
     btop # replaces htop/nmon
     obsidian
+    # freecad-wayland
+    # chromium
+    feh # png viewer
+    gimp
+    krita
 
     # RSS
     liferea

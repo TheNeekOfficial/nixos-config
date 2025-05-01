@@ -2,15 +2,16 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      ls = "eza";
-      cat = "bat";
+      # ls = "eza";
+      # cat = "bat";
     };
   };
   programs.zoxide = {
     enable = true;
     enableBashIntegration = true;
     options = [
-      "--cmd cd"
+      # "--cmd cd"
+      "--cmd zd"
       # "--no-cmd"
     ];
   };

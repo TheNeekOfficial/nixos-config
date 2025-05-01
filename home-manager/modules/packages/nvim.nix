@@ -27,6 +27,9 @@ in {
       # Python
       python312Packages.python-lsp-server
 
+      # Ruby
+      ruby-lsp
+
       # Lua
       lua-language-server # NOTE: Couldn't get working w/ lspconfig
 
@@ -37,12 +40,18 @@ in {
 
       # Lua
       stylua
+
+      # JS/TS
+      javascript-typescript-langserver
+      typescript-language-server
+      vscode-langservers-extracted
     ];
   };
 
   home.file.".config/nvim" = {
     recursive = true;
     source = my-nvim;
+    force = true;
   };
 
   programs.bash.shellAliases = {dotfiles = "nix flake update dotfiles";};

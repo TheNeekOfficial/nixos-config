@@ -8,6 +8,7 @@
     ./xmpp.nix
     ./theming.nix
     ./betterBase.nix
+    ./plex.nix
   ];
   # Enables font config
   fonts.fontconfig.enable = true;
