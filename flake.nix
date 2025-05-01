@@ -45,10 +45,10 @@
     };
 
     # Supposedly better nix lang
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # lix-module = {
+    #   url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     # nix-snapd = {
     #   url = "github:nix-community/nix-snapd";
@@ -172,6 +172,9 @@
 
           # Imports battery optimisations
           ./nixos/modules/battery/batt-bundle.nix
+
+          # Imports copilot key rebind
+          ./nixos/modules/kanata.nix
 
           # Import swappiness control to limit how much my system swaps
           ./nixos/modules/swappiness-control.nix
