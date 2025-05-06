@@ -7,7 +7,7 @@
     ./spotify.nix
     ./vesktop.nix
     ./cursor.nix
-    ./zoom.nix
+    ./work.nix
     ./bitwarden.nix
     ./todolist.nix
     ./pomodoro.nix
